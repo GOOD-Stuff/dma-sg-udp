@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1486554094">
+  <File Type="RDS-PROPCONSTRS" Name="z_top_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="z_top.tcl"/>
+  <File Type="RDS-RDS" Name="z_top.vds"/>
+  <File Type="RDS-UTIL" Name="z_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="z_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="z_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="z_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="z_top_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/SPI_MUX.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/AXIS_COUNTER.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/z_eth/z_eth.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/z_top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/z_top.vhd"/>
+        <Attr Name="ImportTime" Val="1485863713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="z_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/z_eth_top.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_xbar_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_axi_ethernet_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_rst_processing_system7_0_125M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_ila_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_xlconcat_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_pc_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_axi_ethernet_0_dma_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_8314_eth_buf_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_xbar_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_us_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="bd_8314_eth_mac_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_rst_processing_system7_0_125M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_vio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_Counterv5_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_us_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_ila_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_pc_3"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_us_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_us_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="z_eth_auto_us_4"/>
+</GenRun>

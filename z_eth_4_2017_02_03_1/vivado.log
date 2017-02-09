@@ -1,0 +1,167 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Fri Jan 27 11:58:59 2017
+# Process ID: 1224
+# Current directory: D:/Projects/z_eth_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6540 D:\Projects\z_eth_4\z_eth.xpr
+# Log file: D:/Projects/z_eth_4/vivado.log
+# Journal file: D:/Projects/z_eth_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/z_eth_4/z_eth.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Projects/z_eth_2' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2016_1/Vivado/2016.1/data/ip'.
+open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:15 . Memory (MB): peak = 1076.980 ; gain = 398.879
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_ethernet:7.0 - axi_ethernet_0
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_ethernet_0_dma
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- MasterPlayer:user:AXIS_Counter_Direct:1.0 - axis_counter_direct
+Adding cell -- MasterPlayer:user:AXIS_Checker:1.1 - axis_checker
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Successfully read diagram <z_eth> from BD file <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd>
+startgroup
+delete_bd_objs [get_bd_intf_nets axi_ethernet_0_m_axis_rxd]
+delete_bd_objs [get_bd_nets axi_dma_0_mm2s_introut] [get_bd_nets axi_ethernet_0_dma_s2mm_introut] [get_bd_nets axi_ethernet_0_dma_mm2s_cntrl_reset_out_n] [get_bd_nets axi_ethernet_0_dma_s2mm_prmry_reset_out_n] [get_bd_intf_nets axi_dma_0_M_AXI_SG] [get_bd_nets axi_ethernet_0_mac_irq] [get_bd_nets axi_ethernet_0_interrupt] [get_bd_intf_nets axi_interconnect_1_M05_AXI] [get_bd_intf_nets axi_ethernet_0_m_axis_rxs] [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_intf_nets axi_interconnect_1_M00_AXI] [get_bd_nets axi_ethernet_0_dma_mm2s_prmry_reset_out_n] [get_bd_intf_nets axi_interconnect_1_M01_AXI] [get_bd_intf_nets axi_interconnect_1_M02_AXI] [get_bd_intf_nets axi_interconnect_1_M03_AXI] [get_bd_intf_nets axi_ethernet_0_dma_M_AXIS_MM2S] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_SG] [get_bd_intf_nets axi_interconnect_1_M04_AXI] [get_bd_nets axi_dma_0_s2mm_introut] [get_bd_intf_nets axi_dma_0_M_AXI_MM2S] [get_bd_intf_nets S01_AXI_1] [get_bd_nets xlconcat_0_dout] [get_bd_nets processing_system7_0_FCLK_RESET0_N] [get_bd_intf_nets axi_ethernet_0_dma_M_AXIS_CNTRL] [get_bd_intf_nets axi_ethernet_0_mdio] [get_bd_intf_nets axi_ethernet_0_rgmii] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_MM2S] [get_bd_nets axi_ethernet_0_dma_mm2s_introut] [get_bd_nets axi_timer_0_interrupt] [get_bd_nets axi_ethernet_0_dma_s2mm_sts_reset_out_n] [get_bd_nets axi_ethernet_0_phy_rst_n] [get_bd_intf_nets axis_counter_direct_M_AXIS] [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_S2MM] [get_bd_cells axis_counter_direct] [get_bd_cells axi_dma_0] [get_bd_cells xlconcat_0] [get_bd_cells proc_sys_reset_0] [get_bd_cells axi_timer_0] [get_bd_cells axi_ethernet_0] [get_bd_cells axi_ethernet_0_dma] [get_bd_cells axis_checker]
+delete_bd_objs: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 1197.063 ; gain = 71.422
+delete_bd_objs [get_bd_nets ARESETN_1] [get_bd_intf_nets S00_AXI_2] [get_bd_intf_nets axi_interconnect_2_M00_AXI] [get_bd_nets proc_sys_reset_0_peripheral_aresetn] [get_bd_intf_nets axi_interconnect_0_M00_AXI] [get_bd_cells axi_interconnect_2] [get_bd_cells axi_interconnect_0] [get_bd_cells axi_interconnect_1]
+delete_bd_objs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1213.730 ; gain = 16.668
+endgroup
+startgroup
+delete_bd_objs [get_bd_intf_ports RGMII_ETHERNET] [get_bd_intf_ports MDIO_ETHERNET]
+delete_bd_objs [get_bd_ports PHY_RESET_N]
+endgroup
+startgroup
+set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {1} CONFIG.PCW_USE_S_AXI_HP0 {0} CONFIG.PCW_USE_S_AXI_HP1 {0} CONFIG.PCW_EN_CLK1_PORT {0} CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} CONFIG.PCW_SD0_SD0_IO {MIO 16 .. 21} CONFIG.PCW_SPI1_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+WARNING: [BD 41-1684] Pin /processing_system7_0/SPI1_SCLK_O is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /processing_system7_0/SPI1_MOSI_O is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /processing_system7_0/S_AXI_HP0_ACLK is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /processing_system7_0/S_AXI_HP1_ACLK is now disabled. All connections to this pin have been removed. 
+WARNING: [BD 41-1684] Pin /processing_system7_0/FCLK_CLK1 is now disabled. All connections to this pin have been removed. 
+delete_bd_objs [get_bd_nets processing_system7_0_SPI1_SCLK_O] [get_bd_nets processing_system7_0_SPI1_MOSI_O] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1]
+endgroup
+delete_bd_objs [get_bd_ports SPI1_SCLK_O] [get_bd_ports SPI1_MOSI_O]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_FABRIC_INTERRUPT {0}] [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name ila -vendor xilinx.com -library ip -version 6.1 -module_name ila_0
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {2}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files d:/Projects/z_eth_4/z_eth.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+create_bd_port -dir O -type clk FCLK
+connect_bd_net [get_bd_ports FCLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+regenerate_bd_layout
+remove_files D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+update_compile_order -fileset sources_1
+save_bd_design
+Wrote  : <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+make_wrapper -files [get_files D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd] -top
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+make_wrapper: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1372.199 ; gain = 12.430
+add_files -norecurse D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run z_eth_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'z_eth.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] z_eth_processing_system7_0_0: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+[Fri Jan 27 12:04:25 2017] Launched z_eth_processing_system7_0_0_synth_1, ila_0_synth_1, synth_1...
+Run output will be captured here:
+z_eth_processing_system7_0_0_synth_1: D:/Projects/z_eth_4/z_eth.runs/z_eth_processing_system7_0_0_synth_1/runme.log
+ila_0_synth_1: D:/Projects/z_eth_4/z_eth.runs/ila_0_synth_1/runme.log
+synth_1: D:/Projects/z_eth_4/z_eth.runs/synth_1/runme.log
+[Fri Jan 27 12:04:25 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_4/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1406.352 ; gain = 34.152
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+startgroup
+set_property -dict [list CONFIG.PCW_SPI_PERIPHERAL_FREQMHZ {200}] [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+save_bd_design
+Wrote  : <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+reset_run z_eth_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'z_eth.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] z_eth_processing_system7_0_0: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Fri Jan 27 13:17:41 2017] Launched z_eth_processing_system7_0_0_synth_1, synth_1...
+Run output will be captured here:
+z_eth_processing_system7_0_0_synth_1: D:/Projects/z_eth_4/z_eth.runs/z_eth_processing_system7_0_0_synth_1/runme.log
+synth_1: D:/Projects/z_eth_4/z_eth.runs/synth_1/runme.log
+[Fri Jan 27 13:17:41 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_4/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1460.691 ; gain = 2.398
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Jan 27 17:00:40 2017] Launched synth_1...
+Run output will be captured here: D:/Projects/z_eth_4/z_eth.runs/synth_1/runme.log
+[Fri Jan 27 17:00:40 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_4/z_eth.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 27 17:32:55 2017...

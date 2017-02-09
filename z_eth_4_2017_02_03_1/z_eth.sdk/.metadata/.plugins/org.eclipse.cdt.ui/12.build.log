@@ -1,0 +1,21 @@
+10:14:21 **** Build of configuration Debug for project 12 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 Linux gcc compiler'
+arm-linux-gnueabihf-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: 12.elf'
+'Invoking: ARM v7 Linux gcc linker'
+arm-linux-gnueabihf-gcc  -o "12.elf"  ./src/helloworld.o   
+'Finished building target: 12.elf'
+' '
+'Invoking: ARM v7 Linux Print Size'
+arm-linux-gnueabihf-size 12.elf  |tee "12.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+    904	    284	      4	   1192	    4a8	12.elf
+'Finished building: 12.elf.size'
+' '
+
+10:14:23 Build Finished (took 1s.661ms)
+

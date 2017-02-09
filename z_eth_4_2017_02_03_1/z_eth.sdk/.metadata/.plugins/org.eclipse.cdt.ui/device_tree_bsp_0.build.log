@@ -1,0 +1,6 @@
+13:00:02 **** Build of project device_tree_bsp_0 ****
+make -k all 
+make: Цель `all' не требует выполнения команд.
+
+13:00:03 Build Finished (took 117ms)
+

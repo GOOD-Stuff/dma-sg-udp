@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file D:\Projects\z_eth\z_eth.runs\synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Разрешение отклонено

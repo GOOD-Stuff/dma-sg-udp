@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xgpio.h"
+
+XGpio gpio_i;
+XGpio gpio_o;
+XGpioPs led_gpio;
+
+
+int main()
+{
+    init_platform();
+
+    print("Hello World\n\r");
+
+    cleanup_platform();
+    return 0;
+}

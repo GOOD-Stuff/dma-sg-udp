@@ -1,0 +1,50 @@
+17:57:42 **** Auto Build of configuration Debug for project dma_eth_sender ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../dma_eth_sender_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:4:0:
+../src/udp_sender.h:15:1: warning: parameter names (without types) in function declaration
+ void start_udp( vBasicTFTPServer, pvParameters );
+ ^
+../src/udp_sender.h:16:73: warning: 'struct udp_pcb' declared inside parameter list
+ void udp_receive(void *arg, struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port);
+                                                                         ^
+../src/udp_sender.h:16:73: warning: its scope is only this definition or declaration, which is probably not what you want
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:26:2: warning: implicit declaration of function 'axidma_init' [-Wimplicit-function-declaration]
+  axidma_init();
+  ^
+../src/helloworld.c:28:2: warning: implicit declaration of function 'xemac_add' [-Wimplicit-function-declaration]
+  if (!xemac_add(netif, &ipaddr, &netmask, &gw, mac_ethernet_address, PLATFORM_EMAC_BASEADDR)) {
+  ^
+../src/helloworld.c:35:2: warning: implicit declaration of function 'platform_enable_interrupts' [-Wimplicit-function-declaration]
+  platform_enable_interrupts();
+  ^
+../src/helloworld.c:41:2: warning: implicit declaration of function 'start_application' [-Wimplicit-function-declaration]
+  start_application();
+  ^
+../src/helloworld.c:47:3: warning: implicit declaration of function 'xemacif_input' [-Wimplicit-function-declaration]
+   xemacif_input(netif);
+   ^
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../dma_eth_sender_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: dma_eth_sender.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../dma_eth_sender_bsp/ps7_cortexa9_0/lib -o "dma_eth_sender.elf"  ./src/dma.o ./src/helloworld.o ./src/platform.o ./src/udp_sender.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+D:\Projects\z_eth_4\z_eth.sdk\dma_eth_sender\Debug/../src/helloworld.c:26: undefined reference to `axidma_init'
+D:\Projects\z_eth_4\z_eth.sdk\dma_eth_sender\Debug/../src/helloworld.c:35: undefined reference to `platform_enable_interrupts'
+D:\Projects\z_eth_4\z_eth.sdk\dma_eth_sender\Debug/../src/helloworld.c:41: undefined reference to `start_application'
+collect2.exe: error: ld returned 1 exit status
+make: *** [dma_eth_sender.elf] Œ¯Ë·Í‡ 1
+
+17:57:42 Build Finished (took 587ms)
+

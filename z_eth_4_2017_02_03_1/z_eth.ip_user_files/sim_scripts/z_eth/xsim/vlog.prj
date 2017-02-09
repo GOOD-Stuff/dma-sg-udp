@@ -1,0 +1,14 @@
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_dprom.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_sdpram.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_spram.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_sprom.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+sv xil_defaultlib "C:/Xilinx/2016_1/Vivado/2016.1/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+verilog fifo_generator_v13_1_0 "../../../ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+verilog fifo_generator_v13_1_0 "../../../ipstatic/fifo_generator_v13_1/hdl/fifo_generator_v13_1_rfs.v" --include "../../../ipstatic/axi_infrastructure_v1_1/hdl/verilog" --include "../../../ipstatic/processing_system7_bfm_v2_0/hdl"
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

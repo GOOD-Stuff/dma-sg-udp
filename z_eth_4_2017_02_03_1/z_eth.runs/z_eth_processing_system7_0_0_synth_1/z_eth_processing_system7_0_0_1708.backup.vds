@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Thu Feb 02 15:50:21 2017
+# Process ID: 1708
+# Current directory: D:/Projects/z_eth_4/z_eth.runs/z_eth_processing_system7_0_0_synth_1
+# Command line: vivado.exe -log z_eth_processing_system7_0_0.vds -mode batch -messageDb vivado.pb -notrace -source z_eth_processing_system7_0_0.tcl
+# Log file: D:/Projects/z_eth_4/z_eth.runs/z_eth_processing_system7_0_0_synth_1/z_eth_processing_system7_0_0.vds
+# Journal file: D:/Projects/z_eth_4/z_eth.runs/z_eth_processing_system7_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source z_eth_processing_system7_0_0.tcl -notrace
+Command: synth_design -top z_eth_processing_system7_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 640 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 337.402 ; gain = 130.766
+---------------------------------------------------------------------------------

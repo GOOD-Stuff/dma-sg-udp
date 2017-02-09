@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2016.1 (64-bit)                     -->
+<!--                                                              -->
+<!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.        -->
+
+<hwsession version="1" minor="1">
+  <device name="xc7z010_1" gui_info="dashboard1=hw_vios[xc7z010_1/hw_vio_1=VIO_PROBES_1;],dashboard2=dashboard_1[xc7z010_1/hw_ila_1/Settings=ILA_SETTINGS_1;xc7z010_1/hw_ila_2/Capture Setup=ILA_CAPTURE_2;xc7z010_1/hw_ila_1/Status=ILA_STATUS_1;xc7z010_1/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xc7z010_1/hw_ila_1/Waveform=ILA_WAVE_1;xc7z010_1/hw_ila_2/Settings=ILA_SETTINGS_2;xc7z010_1/hw_ila_2/Trigger Setup=ILA_TRIGGER_2;xc7z010_1/hw_ila_2/Status=ILA_STATUS_2;xc7z010_1/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7z010_1/hw_ila_2/Waveform=ILA_WAVE_2;]"/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xc7z010_1" gui_info="">
+      <Properties Property="PROBES.FILE" value="$_project_name_.runs/impl_1/debug_nets.ltx"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/z_top.bit"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="ila_0_inst" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="z_eth_wrapper_inst/z_eth_i/ila_0" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="z_eth_wrapper_inst/z_eth_i/ila_1" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_probe" gui_info="">
+    <Object name="A_DONE_IBUF" gui_info=""/>
+    <Object name="sA_CCLK" gui_info="Trigger Setup=0"/>
+    <Object name="sA_DIN" gui_info=""/>
+    <Object name="sA_PROG_B" gui_info=""/>
+    <Object name="s_SS_0" gui_info=""/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[31:0]" gui_info="Trigger Setup=0"/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TLAST" gui_info="Trigger Setup=1"/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TVALID" gui_info=""/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/axi_dma_0_s_axis_s2mm_tready" gui_info=""/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWVALID" gui_info="Trigger Setup=0"/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[31:0]" gui_info="hw_vios/hw_vio_1=1"/>
+    <Object name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out1" gui_info="hw_vios/hw_vio_1=0_exp"/>
+  </ObjectList>
+  <ObjectList object_type="hw_vio" gui_info="">
+    <Object name="hw_vio_1" gui_info="hw_vios/hw_vio_1/TablePreference=5	561	Name	0	2147483647	15	296	296	Value	1	2147483647	15	93	93	Activity	2	2147483647	15	58	58	Direction	3	2147483647	15	64	64	VIO	4	2147483647	15	50	50			1	6	1	Name	Value	Activity	Direction	VIO"/>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[3]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="&lt;const0>"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[2]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="&lt;const0>_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="A_CCLK_OBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="A_DIN_OBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="A_DONE_IBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[1]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="A_INIT_B_IBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="B_CCLK_OBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="B_DIN_OBUF"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bR"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bR"/>
+      </probeOptions>
+      <nets>
+        <net name="sA_CCLK"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sA_DIN"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sA_DONE"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sA_INIT_B"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sA_PROG_B"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sB_CCLK"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sB_DIN"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sB_DONE"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sB_INIT_B"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="sB_PROG_B"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe5[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="s_SS_0"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="s_SS_0_1"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="s_SS_0_2"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="neq32&apos;h0000_0000"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="neq32&apos;h0000_0000"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[31]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[30]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[29]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[28]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[27]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[26]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[25]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[24]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[23]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[22]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[21]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[20]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[19]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[18]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[17]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[16]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[15]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[14]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[13]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[12]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[11]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[10]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;b1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;b1"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TLAST"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/Net"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/axi_dma_0_s_axis_s2mm_tready"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe0[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[31]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[30]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[29]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[28]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[27]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[26]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[25]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[24]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[23]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[22]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[21]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[20]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[19]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[18]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[17]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[16]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[15]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[14]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[13]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[12]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[11]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[10]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TDATA[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe1[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TKEEP[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TKEEP[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TKEEP[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TKEEP[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe2[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TLAST"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/axis_counter_direct_M_AXIS_TVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq4&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq4&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe15[3:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq4&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe15[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe15[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe15[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe15[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq3&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq3&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe17[2:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq3&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe17[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe17[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe17[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq3&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq3&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe18[2:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq3&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe18[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe18[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/probe18[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe9[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARREADY"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe12[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWREADY"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bR"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe11[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bR"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BREADY"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe2[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BRESP[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BRESP[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe10[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[31]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[30]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[29]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[28]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[27]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[26]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[25]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[24]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[23]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[22]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[21]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[20]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[19]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[18]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[17]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[16]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[15]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[14]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[13]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[12]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[11]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[10]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe6[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RREADY"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe13[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RRESP[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RRESP[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe16[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe14[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[31]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[30]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[29]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[28]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[27]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[26]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[25]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[24]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[23]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[22]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[21]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[20]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[19]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[18]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[17]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[16]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[15]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[14]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[13]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[12]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[11]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[10]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WREADY"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe5[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq10&apos;hXXX"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="MAP" value="probe1[9:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq10&apos;hXXX"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[0]"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="bus" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="00000400"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="HEX"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[31]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[30]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[29]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[28]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[27]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[26]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[25]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[24]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[23]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[22]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[21]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[20]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[19]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[18]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[17]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[16]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[15]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[14]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[13]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[12]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[11]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[10]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[9]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[8]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[7]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[6]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[5]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[4]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[3]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[2]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[1]"/>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out0[0]"/>
+      </nets>
+    </probe>
+    <probe type="vio_output" busType="net" source="netlist" spec="VIO_OUTPUT_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_VIO" value="hw_vio_1"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="OUTPUT_VALUE" value="1"/>
+        <Option Id="OUTPUT_VALUE_RADIX" value="BINARY"/>
+        <Option Id="SOURCE" value="netlist"/>
+      </probeOptions>
+      <nets>
+        <net name="z_eth_wrapper_inst/z_eth_i/vio_0_probe_out1"/>
+      </nets>
+    </probe>
+  </probeset>
+</hwsession>

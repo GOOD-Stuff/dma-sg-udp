@@ -1,0 +1,104 @@
+12:58:25 **** Auto Build of configuration Debug for project z_lwip_dma ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/dma.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/dma.d" -MT"src/dma.o" -o "src/dma.o" "../src/dma.c"
+'Finished building: ../src/dma.c'
+' '
+'Building file: ../src/dma_parser.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dma_parser.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/dma_parser.d" -MT"src/dma_parser.o" -o "src/dma_parser.o" "../src/dma_parser.c"
+../src/dma_parser.c: In function 'Parser_InitializeTransferMM2S':
+../src/dma_parser.c:60:36: warning: initialization makes integer from pointer without a cast
+  u32 incrementableBufferAddress  = (u32*)Rx_0.StartAddress;
+                                    ^
+'Finished building: ../src/dma_parser.c'
+' '
+'Building file: ../src/echo.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/echo.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/echo.d" -MT"src/echo.o" -o "src/echo.o" "../src/echo.c"
+'Finished building: ../src/echo.c'
+' '
+'Building file: ../src/i2c_access.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/i2c_access.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/i2c_access.d" -MT"src/i2c_access.o" -o "src/i2c_access.o" "../src/i2c_access.c"
+'Finished building: ../src/i2c_access.c'
+' '
+'Building file: ../src/intc.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/intc.d" -MT"src/intc.o" -o "src/intc.o" "../src/intc.c"
+../src/intc.c: In function 'TxChannel_CallBack':
+../src/intc.c:167:6: warning: variable 'BufferAddress' set but not used [-Wunused-but-set-variable]
+  u32 BufferAddress   = 0;
+      ^
+../src/intc.c:165:6: warning: variable 'TransferredBytes' set but not used [-Wunused-but-set-variable]
+  u32 TransferredBytes = 0;
+      ^
+'Finished building: ../src/intc.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:71:2: warning: implicit declaration of function 'XAxiCounter_ResetCounter' [-Wimplicit-function-declaration]
+  XAxiCounter_ResetCounter(&Counter);
+  ^
+../src/main.c:97:5: warning: implicit declaration of function 'XAxiCounter_StartCounter' [-Wimplicit-function-declaration]
+     XAxiCounter_StartCounter(&Counter);
+     ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform_zynq.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynq.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform_zynq.d" -MT"src/platform_zynq.o" -o "src/platform_zynq.o" "../src/platform_zynq.c"
+'Finished building: ../src/platform_zynq.c'
+' '
+'Building file: ../src/platform_zynqmp.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform_zynqmp.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform_zynqmp.d" -MT"src/platform_zynqmp.o" -o "src/platform_zynqmp.o" "../src/platform_zynqmp.c"
+'Finished building: ../src/platform_zynqmp.c'
+' '
+'Building file: ../src/sfp.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sfp.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sfp.d" -MT"src/sfp.o" -o "src/sfp.o" "../src/sfp.c"
+'Finished building: ../src/sfp.c'
+' '
+'Building file: ../src/si5324.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/si5324.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/si5324.d" -MT"src/si5324.o" -o "src/si5324.o" "../src/si5324.c"
+'Finished building: ../src/si5324.c'
+' '
+'Building file: ../src/udp.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/udp.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/udp.d" -MT"src/udp.o" -o "src/udp.o" "../src/udp.c"
+In file included from ../src/udp.c:2:0:
+../../z_lwip_dma_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^
+../../z_lwip_dma_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^
+In file included from ../src/udp.c:8:0:
+../src/udp.h:5:1: warning: parameter names (without types) in function declaration
+ void start_udp( vBasicTFTPServer, pvParameters );
+ ^
+../src/udp.c: In function 'start_udp':
+../src/udp.c:25:2: warning: implicit declaration of function 'xil_printf' [-Wimplicit-function-declaration]
+  xil_printf("Listening UDP datagrams at %d, forwarding to port=%d at " , port, fwd_port);
+  ^
+../src/udp.c:26:2: warning: implicit declaration of function 'print_ip' [-Wimplicit-function-declaration]
+  print_ip("", &forward_ip);
+  ^
+'Finished building: ../src/udp.c'
+' '
+'Building file: ../src/xaxichecker.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xaxichecker.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../z_lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xaxichecker.d" -MT"src/xaxichecker.o" -o "src/xaxichecker.o" "../src/xaxichecker.c"
+'Finished building: ../src/xaxichecker.c'
+' '
+make: *** Нет правила для сборки цели `gic.o', требуемой для `z_lwip_dma.elf'.  Останов.
+
+12:58:28 Build Finished (took 2s.388ms)
+

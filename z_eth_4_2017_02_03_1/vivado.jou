@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Fri Jan 27 11:58:59 2017
+# Process ID: 1224
+# Current directory: D:/Projects/z_eth_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6540 D:\Projects\z_eth_4\z_eth.xpr
+# Log file: D:/Projects/z_eth_4/vivado.log
+# Journal file: D:/Projects/z_eth_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/z_eth_4/z_eth.xpr
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+startgroup
+delete_bd_objs [get_bd_intf_nets axi_ethernet_0_m_axis_rxd]
+delete_bd_objs [get_bd_nets axi_dma_0_mm2s_introut] [get_bd_nets axi_ethernet_0_dma_s2mm_introut] [get_bd_nets axi_ethernet_0_dma_mm2s_cntrl_reset_out_n] [get_bd_nets axi_ethernet_0_dma_s2mm_prmry_reset_out_n] [get_bd_intf_nets axi_dma_0_M_AXI_SG] [get_bd_nets axi_ethernet_0_mac_irq] [get_bd_nets axi_ethernet_0_interrupt] [get_bd_intf_nets axi_interconnect_1_M05_AXI] [get_bd_intf_nets axi_ethernet_0_m_axis_rxs] [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_intf_nets axi_interconnect_1_M00_AXI] [get_bd_nets axi_ethernet_0_dma_mm2s_prmry_reset_out_n] [get_bd_intf_nets axi_interconnect_1_M01_AXI] [get_bd_intf_nets axi_interconnect_1_M02_AXI] [get_bd_intf_nets axi_interconnect_1_M03_AXI] [get_bd_intf_nets axi_ethernet_0_dma_M_AXIS_MM2S] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_SG] [get_bd_intf_nets axi_interconnect_1_M04_AXI] [get_bd_nets axi_dma_0_s2mm_introut] [get_bd_intf_nets axi_dma_0_M_AXI_MM2S] [get_bd_intf_nets S01_AXI_1] [get_bd_nets xlconcat_0_dout] [get_bd_nets processing_system7_0_FCLK_RESET0_N] [get_bd_intf_nets axi_ethernet_0_dma_M_AXIS_CNTRL] [get_bd_intf_nets axi_ethernet_0_mdio] [get_bd_intf_nets axi_ethernet_0_rgmii] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_MM2S] [get_bd_nets axi_ethernet_0_dma_mm2s_introut] [get_bd_nets axi_timer_0_interrupt] [get_bd_nets axi_ethernet_0_dma_s2mm_sts_reset_out_n] [get_bd_nets axi_ethernet_0_phy_rst_n] [get_bd_intf_nets axis_counter_direct_M_AXIS] [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S] [get_bd_intf_nets axi_ethernet_0_dma_M_AXI_S2MM] [get_bd_cells axis_counter_direct] [get_bd_cells axi_dma_0] [get_bd_cells xlconcat_0] [get_bd_cells proc_sys_reset_0] [get_bd_cells axi_timer_0] [get_bd_cells axi_ethernet_0] [get_bd_cells axi_ethernet_0_dma] [get_bd_cells axis_checker]
+delete_bd_objs [get_bd_nets ARESETN_1] [get_bd_intf_nets S00_AXI_2] [get_bd_intf_nets axi_interconnect_2_M00_AXI] [get_bd_nets proc_sys_reset_0_peripheral_aresetn] [get_bd_intf_nets axi_interconnect_0_M00_AXI] [get_bd_cells axi_interconnect_2] [get_bd_cells axi_interconnect_0] [get_bd_cells axi_interconnect_1]
+endgroup
+startgroup
+delete_bd_objs [get_bd_intf_ports RGMII_ETHERNET] [get_bd_intf_ports MDIO_ETHERNET]
+delete_bd_objs [get_bd_ports PHY_RESET_N]
+endgroup
+startgroup
+set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {1} CONFIG.PCW_USE_S_AXI_HP0 {0} CONFIG.PCW_USE_S_AXI_HP1 {0} CONFIG.PCW_EN_CLK1_PORT {0} CONFIG.PCW_SD0_PERIPHERAL_ENABLE {1} CONFIG.PCW_SD0_SD0_IO {MIO 16 .. 21} CONFIG.PCW_SPI1_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+delete_bd_objs [get_bd_nets processing_system7_0_SPI1_SCLK_O] [get_bd_nets processing_system7_0_SPI1_MOSI_O] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1] [get_bd_nets processing_system7_0_FCLK_CLK1]
+endgroup
+delete_bd_objs [get_bd_ports SPI1_SCLK_O] [get_bd_ports SPI1_MOSI_O]
+connect_bd_net [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_FABRIC_INTERRUPT {0}] [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+create_ip -name ila -vendor xilinx.com -library ip -version 6.1 -module_name ila_0
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {2}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files d:/Projects/z_eth_4/z_eth.srcs/sources_1/ip/ila_0/ila_0.xci]
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+create_bd_port -dir O -type clk FCLK
+connect_bd_net [get_bd_ports FCLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+regenerate_bd_layout
+remove_files D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+update_compile_order -fileset sources_1
+save_bd_design
+make_wrapper -files [get_files D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd] -top
+add_files -norecurse D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run z_eth_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+startgroup
+set_property -dict [list CONFIG.PCW_SPI_PERIPHERAL_FREQMHZ {200}] [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+validate_bd_design
+save_bd_design
+reset_run synth_1
+reset_run z_eth_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+file copy -force D:/Projects/z_eth_4/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_4/z_eth.sdk -hwspec D:/Projects/z_eth_4/z_eth.sdk/z_eth_top.hdf
+open_bd_design {D:/Projects/z_eth_4/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1

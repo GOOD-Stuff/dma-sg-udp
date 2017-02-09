@@ -1,0 +1,1032 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Thu Jan 19 09:17:33 2017
+# Process ID: 7760
+# Current directory: D:/Projects/z_eth_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7640 D:\Projects\z_eth_2\z_eth.xpr
+# Log file: D:/Projects/z_eth_2/vivado.log
+# Journal file: D:/Projects/z_eth_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Projects/z_eth_2/z_eth.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Projects/z_eth' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2016_1/Vivado/2016.1/data/ip'.
+open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:18 . Memory (MB): peak = 1039.723 ; gain = 373.637
+update_compile_order -fileset sources_1
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_ethernet:7.0 - axi_ethernet_0
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_ethernet_0_dma
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- MasterPlayer:user:axis_counter:2 - axis_counter_0
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- MasterPlayer:user:AXIS_Checker:1.1 - axis_checker
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Successfully read diagram <z_eth> from BD file <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd>
+open_bd_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1133.211 ; gain = 93.488
+create_peripheral MasterPlayer user AXIS_Counter_Direct 1.0 -dir D:/Projects/CustomIP/AXIS_Counter
+add_peripheral_interface S_AXI -interface_mode slave -axi_type lite [ipx::find_open_core MasterPlayer:user:AXIS_Counter_Direct:1.0]
+add_peripheral_interface M_AXIS -interface_mode master -axi_type stream [ipx::find_open_core MasterPlayer:user:AXIS_Counter_Direct:1.0]
+generate_peripheral -driver -bfm_example_design -debug_hw_example_design [ipx::find_open_core MasterPlayer:user:AXIS_Counter_Direct:1.0]
+write_peripheral [ipx::find_open_core MasterPlayer:user:AXIS_Counter_Direct:1.0]
+set_property  ip_repo_paths  {D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0 D:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1 D:/Projects/CustomIP/Cores/axis_counter_2} [current_project]
+update_ip_catalog -rebuild
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+ipx::edit_ip_in_project -upgrade true -name edit_AXIS_Counter_Direct_v1_0 -directory D:/Projects/CustomIP/AXIS_Counter d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2016_1/Vivado/2016.1/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+INFO: [IP_Flow 19-793] Syncing display name meta-data
+INFO: [IP_Flow 19-798] Syncing taxonomy meta-data
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+file mkdir D:/Projects/CustomIP/AXIS_Counter/edit_AXIS_Counter_Direct_v1_0.srcs/sources_1/new
+close [ open D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/axis_counter_stream.vhd w ]
+add_files D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/axis_counter_stream.vhd
+update_compile_order -fileset sources_1
+remove_files d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXIS_Counter_Direct_v1_0_M_AXIS.vhd
+update_compile_order -fileset sources_1
+remove_files d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXIS_Counter_Direct_v1_0.vhd
+update_compile_order -fileset sim_1
+close [ open D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd w ]
+add_files D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property top AXI_Counter [current_fileset]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+launch_runs synth_1 -jobs 2
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd" into library xil_defaultlib [D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd:1]
+[Thu Jan 19 09:42:54 2017] Launched synth_1...
+Run output will be captured here: d:/projects/customip/axis_counter/edit_AXIS_Counter_Direct_v1_0.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd" into library xil_defaultlib [D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd:1]
+[Thu Jan 19 09:44:44 2017] Launched synth_1...
+Run output will be captured here: d:/projects/customip/axis_counter/edit_AXIS_Counter_Direct_v1_0.runs/synth_1/runme.log
+ipx::merge_project_changes files [ipx::current_core]
+ipx::remove_user_parameter C_S_AXI_DATA_WIDTH [ipx::current_core]
+ipx::remove_user_parameter C_M_AXIS_TDATA_WIDTH [ipx::current_core]
+ipx::remove_user_parameter C_S_AXI_ADDR_WIDTH [ipx::current_core]
+ipx::remove_user_parameter C_M_AXIS_START_COUNT [ipx::current_core]
+ipx::remove_user_parameter C_S_AXI_BASEADDR [ipx::current_core]
+ipx::remove_user_parameter C_S_AXI_HIGHADDR [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+CRITICAL WARNING: [IP_Flow 19-4778] Multiple interface port maps are removed. Please recreate the interfaces if necessary.
+ERROR: [Common 17-39] 'ipx::merge_project_changes' failed due to earlier errors.
+ipx::add_port_map TKEEP [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TKEEP [ipx::get_port_maps TKEEP -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::remove_bus_interface M_AXIS_RST [ipx::current_core]
+ipx::remove_bus_interface M_AXIS_CLK [ipx::current_core]
+ipx::associate_bus_interfaces -busif M_AXIS -clock S_AXI_CLK [ipx::current_core]
+ipx::associate_bus_interfaces -busif S_AXI -clock S_AXI_CLK [ipx::current_core]
+ipx::remove_address_block_parameter OFFSET_BASE_PARAM [ipx::get_address_blocks S_AXI_reg -of_objects [ipx::get_memory_maps S_AXI -of_objects [ipx::current_core]]]
+ipx::remove_address_block_parameter OFFSET_HIGH_PARAM [ipx::get_address_blocks S_AXI_reg -of_objects [ipx::get_memory_maps S_AXI -of_objects [ipx::current_core]]]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+INFO: [HDL 9-1061] Parsing VHDL file "D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd" into library xil_defaultlib [D:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/hdl/AXI_Counter.vhd:1]
+[Thu Jan 19 10:31:27 2017] Launched synth_1...
+Run output will be captured here: d:/projects/customip/axis_counter/edit_AXIS_Counter_Direct_v1_0.runs/synth_1/runme.log
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+close_project -delete
+****** Webtalk v2016.1 (64-bit)
+  **** SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+  **** IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source d:/projects/customip/axis_counter/edit_AXIS_Counter_Direct_v1_0.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 19 10:32:13 2017...
+update_ip_catalog -rebuild -repo_path d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'
+delete_bd_objs [get_bd_intf_nets axi_interconnect_1_M02_AXI] [get_bd_intf_nets axis_counter_0_M_AXIS] [get_bd_cells axis_counter_0]
+startgroup
+create_bd_cell -type ip -vlnv MasterPlayer:user:AXIS_Counter_Direct:1.0 AXIS_Counter_Direct_0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins AXIS_Counter_Direct_0/M_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+connect_bd_intf_net [get_bd_intf_pins AXIS_Counter_Direct_0/S_AXI] -boundary_type upper [get_bd_intf_pins axi_interconnect_1/M02_AXI]
+set_property name axis_counter_direct [get_bd_cells AXIS_Counter_Direct_0]
+assign_bd_address [get_bd_addr_segs {axis_counter_direct/S_AXI/S_AXI_reg }]
+</axis_counter_direct/S_AXI/S_AXI_reg> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+regenerate_bd_layout
+validate_bd_design
+ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
+/axis_counter_direct/s_axi_aclk
+
+ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
+connect_bd_net [get_bd_pins axis_counter_direct/s_axi_aclk] [get_bd_pins axi_timer_0/s_axi_aclk]
+connect_bd_net [get_bd_pins axis_counter_direct/s_axi_aresetn] [get_bd_pins axi_timer_0/s_axi_aresetn]
+regenerate_bd_layout
+validate_bd_design
+validate_bd_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 1407.824 ; gain = 104.559
+set_param general.maxThreads 4
+4
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+reset_run z_eth_axi_ethernet_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'z_eth.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 10:34:29 2017] Launched z_eth_axi_ethernet_0_0_synth_1, z_eth_AXIS_Counter_Direct_0_0_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_us_2_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_us_5_synth_1, synth_1...
+Run output will be captured here:
+z_eth_axi_ethernet_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_0_synth_1/runme.log
+z_eth_AXIS_Counter_Direct_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_AXIS_Counter_Direct_0_0_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 10:34:29 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1639.008 ; gain = 223.375
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_2/z_eth.sdk -hwspec D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/Projects/z_eth_2/z_eth.sdk -hwspec D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+report_ip_status -name ip_status
+export_ip_user_files -of_objects [get_ips  z_eth_AXIS_Counter_Direct_0_0] -no_script -reset -quiet
+upgrade_ip -vlnv MasterPlayer:user:AXIS_Counter_Direct:1.0 [get_ips  z_eth_AXIS_Counter_Direct_0_0] -log ip_upgrade.log
+Upgrading 'D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd'
+INFO: [IP_Flow 19-1972] Upgraded z_eth_AXIS_Counter_Direct_0_0 from AXI4-Stream Counter 1.0 to AXI4-Stream Counter 1.0
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Projects/z_eth_2/ip_upgrade.log'.
+ipx::edit_ip_in_project -upgrade true -name AXIS_Counter_Direct_v1_0_project -directory D:/Projects/z_eth_2/z_eth.tmp/AXIS_Counter_Direct_v1_0_project d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2016_1/Vivado/2016.1/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+INFO: [IP_Flow 19-793] Syncing display name meta-data
+INFO: [IP_Flow 19-798] Syncing taxonomy meta-data
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+ipx::remove_memory_map S_AXI [ipx::current_core]
+ipx::add_memory_map S_AXI [ipx::current_core]
+set_property slave_memory_map_ref S_AXI [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+ipx::add_address_block s_axi_lite [ipx::get_memory_maps S_AXI -of_objects [ipx::current_core]]
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+close_project -delete
+****** Webtalk v2016.1 (64-bit)
+  **** SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+  **** IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source d:/projects/z_eth_2/z_eth.tmp/axis_counter_direct_v1_0_project/AXIS_Counter_Direct_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 19 11:11:46 2017...
+update_ip_catalog -rebuild -repo_path d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'
+export_ip_user_files -of_objects [get_ips  z_eth_AXIS_Counter_Direct_0_0] -no_script -reset -quiet
+upgrade_ip -vlnv MasterPlayer:user:AXIS_Counter_Direct:1.0 [get_ips  z_eth_AXIS_Counter_Direct_0_0] -log ip_upgrade.log
+Upgrading 'D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd'
+INFO: [IP_Flow 19-3422] Upgraded z_eth_AXIS_Counter_Direct_0_0 (AXI4-Stream Counter 1.0) from revision 2 to revision 3
+CRITICAL WARNING: [BD 41-1173] Cannot locate slave </axis_counter_direct/S_AXI/S_AXI_reg> to create segment <SEG_axis_counter_direct_S_AXI_reg> 
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Projects/z_eth_2/ip_upgrade.log'.
+delete_bd_objs [get_bd_intf_nets axi_interconnect_1_M02_AXI]
+connect_bd_intf_net [get_bd_intf_pins axis_counter_direct/S_AXI] -boundary_type upper [get_bd_intf_pins axi_interconnect_1/M02_AXI]
+assign_bd_address [get_bd_addr_segs {axis_counter_direct/S_AXI/s_axi_lite }]
+</axis_counter_direct/S_AXI/s_axi_lite> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+report_ip_status -name ip_status 
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 11:13:17 2017] Launched z_eth_AXIS_Counter_Direct_0_0_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_us_5_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_2_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_pc_0_synth_1, synth_1...
+Run output will be captured here:
+z_eth_AXIS_Counter_Direct_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_AXIS_Counter_Direct_0_0_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 11:13:18 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1899.035 ; gain = 32.438
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.1 ila_0
+endgroup
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+startgroup
+set_property -dict [list CONFIG.C_PROBE1_WIDTH {4} CONFIG.C_PROBE0_WIDTH {32} CONFIG.C_NUM_OF_PROBES {5} CONFIG.C_MONITOR_TYPE {Native} CONFIG.C_ENABLE_ILA_AXI_MON {false}] [get_bd_cells ila_0]
+endgroup
+connect_bd_net [get_bd_pins ila_0/probe0] [get_bd_pins axis_counter_direct/M_AXIS_TDATA]
+WARNING: [BD 41-1306] The connection to interface pin /axis_counter_direct/M_AXIS_TDATA is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TLAST] [get_bd_pins ila_0/probe2]
+WARNING: [BD 41-1306] The connection to interface pin /axis_counter_direct/M_AXIS_TLAST is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TKEEP] [get_bd_pins ila_0/probe1]
+WARNING: [BD 41-1306] The connection to interface pin /axis_counter_direct/M_AXIS_TKEEP is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TVALID] [get_bd_pins ila_0/probe4]
+WARNING: [BD 41-1306] The connection to interface pin /axis_counter_direct/M_AXIS_TVALID is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TREADY] [get_bd_pins ila_0/probe3]
+WARNING: [BD 41-1306] The connection to interface pin /axis_counter_direct/M_AXIS_TREADY is being overridden by the user. This pin will not be connected as a part of interface connection M_AXIS
+connect_bd_net [get_bd_pins ila_0/clk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk]
+regenerate_bd_layout
+validate_bd_design
+WARNING: [BD 41-1271] The connection to the pin: /axis_counter_direct/M_AXIS_TDATA has been overridden by the user. This pin will not be connected as a part of the interface connection: AXIS_Counter_Direct_0_M_AXIS 
+WARNING: [BD 41-1271] The connection to the pin: /axis_counter_direct/M_AXIS_TVALID has been overridden by the user. This pin will not be connected as a part of the interface connection: AXIS_Counter_Direct_0_M_AXIS 
+WARNING: [BD 41-1271] The connection to the pin: /axis_counter_direct/M_AXIS_TLAST has been overridden by the user. This pin will not be connected as a part of the interface connection: AXIS_Counter_Direct_0_M_AXIS 
+WARNING: [BD 41-1271] The connection to the pin: /axis_counter_direct/M_AXIS_TREADY has been overridden by the user. This pin will not be connected as a part of the interface connection: AXIS_Counter_Direct_0_M_AXIS 
+WARNING: [BD 41-1271] The connection to the pin: /axis_counter_direct/M_AXIS_TKEEP has been overridden by the user. This pin will not be connected as a part of the interface connection: AXIS_Counter_Direct_0_M_AXIS 
+CRITICAL WARNING: [BD 41-759] The input pins (listed below) are either not connected or do not have a source port, and they don't have a tie-off specified. 
+Please check your design and connect them if needed: 
+/axi_dma_0/s_axis_s2mm_tlast
+/axis_counter_direct/M_AXIS_TREADY
+/ila_0/probe3
+
+validate_bd_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 2100.098 ; gain = 0.000
+delete_bd_objs [get_bd_intf_nets AXIS_Counter_Direct_0_M_AXIS]
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TDATA] [get_bd_pins axi_dma_0/s_axis_s2mm_tdata]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tdata is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TLAST] [get_bd_pins axi_dma_0/s_axis_s2mm_tlast]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tlast is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TVALID] [get_bd_pins axi_dma_0/s_axis_s2mm_tvalid]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tvalid is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+connect_bd_net [get_bd_pins axis_counter_direct/M_AXIS_TREADY] [get_bd_pins axi_dma_0/s_axis_s2mm_tready]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tready is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+connect_bd_net [get_bd_pins axi_dma_0/s_axis_s2mm_tkeep] [get_bd_pins axis_counter_direct/M_AXIS_TKEEP]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tkeep is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+regenerate_bd_layout
+validate_bd_design
+validate_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2100.098 ; gain = 0.000
+exclude_bd_addr_seg [get_bd_addr_segs processing_system7_0/Data/SEG_axis_counter_direct_s_axi_lite]
+Excluding </axis_counter_direct/S_AXI/s_axi_lite> from </processing_system7_0/Data>
+include_bd_addr_seg [get_bd_addr_segs -excluded processing_system7_0/Data/SEG_axis_counter_direct_s_axi_lite]
+Including </axis_counter_direct/S_AXI/s_axi_lite> into </processing_system7_0/Data>
+set_property offset 0x40000000 [get_bd_addr_segs {processing_system7_0/Data/SEG_axis_counter_direct_s_axi_lite}]
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+reset_run z_eth_axi_ethernet_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ila_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 11:57:40 2017] Launched z_eth_axi_ethernet_0_0_synth_1, z_eth_xbar_1_synth_1, z_eth_auto_us_5_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_us_1_synth_1, z_eth_ila_0_0_synth_1, z_eth_auto_us_2_synth_1, synth_1...
+Run output will be captured here:
+z_eth_axi_ethernet_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_0_synth_1/runme.log
+z_eth_xbar_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_1_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_ila_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_ila_0_0_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 11:57:40 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2142.402 ; gain = 42.305
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+set_param general.MaxThreads 4
+4
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+
+ipx::edit_ip_in_project -upgrade true -name AXIS_Counter_Direct_v1_0_project -directory D:/Projects/z_eth_2/z_eth.tmp/AXIS_Counter_Direct_v1_0_project d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2016_1/Vivado/2016.1/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+INFO: [IP_Flow 19-793] Syncing display name meta-data
+INFO: [IP_Flow 19-798] Syncing taxonomy meta-data
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+ipx::remove_bus_interface S_AXI [ipx::current_core]
+ipx::remove_bus_interface M_AXIS [ipx::current_core]
+ipx::add_bus_interface S_AXI [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:aximm_rtl:1.0 [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:aximm:1.0 [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property display_name S_AXI [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+ipx::add_port_map BVALID [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_bvalid [ipx::get_port_maps BVALID -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map RREADY [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_rready [ipx::get_port_maps RREADY -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map BREADY [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_bready [ipx::get_port_maps BREADY -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map AWVALID [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_awvalid [ipx::get_port_maps AWVALID -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map AWREADY [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_awready [ipx::get_port_maps AWREADY -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map AWPROT [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_awprot [ipx::get_port_maps AWPROT -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map WDATA [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_wdata [ipx::get_port_maps WDATA -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map RRESP [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_rresp [ipx::get_port_maps RRESP -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map ARPROT [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_arprot [ipx::get_port_maps ARPROT -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map RVALID [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_rvalid [ipx::get_port_maps RVALID -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map ARADDR [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_araddr [ipx::get_port_maps ARADDR -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map AWADDR [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_awaddr [ipx::get_port_maps AWADDR -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map ARREADY [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_arready [ipx::get_port_maps ARREADY -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map WVALID [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_wvalid [ipx::get_port_maps WVALID -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map WREADY [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_wready [ipx::get_port_maps WREADY -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map ARVALID [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_arvalid [ipx::get_port_maps ARVALID -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map WSTRB [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_wstrb [ipx::get_port_maps WSTRB -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map BRESP [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_bresp [ipx::get_port_maps BRESP -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_port_map RDATA [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+set_property physical_name s_axi_rdata [ipx::get_port_maps RDATA -of_objects [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]]
+ipx::add_bus_interface M_AXIS [ipx::current_core]
+set_property abstraction_type_vlnv xilinx.com:interface:axis_rtl:1.0 [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property bus_type_vlnv xilinx.com:interface:axis:1.0 [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property interface_mode master [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+ipx::add_port_map TDATA [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TDATA [ipx::get_port_maps TDATA -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::add_port_map TVALID [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TVALID [ipx::get_port_maps TVALID -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::add_port_map TKEEP [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TKEEP [ipx::get_port_maps TKEEP -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::add_port_map TLAST [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TLAST [ipx::get_port_maps TLAST -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::add_port_map TREADY [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]
+set_property physical_name M_AXIS_TREADY [ipx::get_port_maps TREADY -of_objects [ipx::get_bus_interfaces M_AXIS -of_objects [ipx::current_core]]]
+ipx::associate_bus_interfaces -busif S_AXI -clock S_AXI_CLK [ipx::current_core]
+ipx::associate_bus_interfaces -busif M_AXIS -clock S_AXI_CLK [ipx::current_core]
+ipx::remove_memory_map S_AXI [ipx::current_core]
+ipx::add_memory_map S_AXI [ipx::current_core]
+set_property slave_memory_map_ref S_AXI [ipx::get_bus_interfaces S_AXI -of_objects [ipx::current_core]]
+ipx::add_address_block S_AXI_REG [ipx::get_memory_maps S_AXI -of_objects [ipx::current_core]]
+set_property core_revision 4 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+close_project -delete
+****** Webtalk v2016.1 (64-bit)
+  **** SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+  **** IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source d:/projects/z_eth_2/z_eth.tmp/axis_counter_direct_v1_0_project/AXIS_Counter_Direct_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Jan 19 12:29:11 2017...
+update_ip_catalog -rebuild -repo_path d:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'
+update_ip_catalog: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2315.258 ; gain = 0.000
+report_ip_status -name ip_status 
+export_ip_user_files -of_objects [get_ips  z_eth_AXIS_Counter_Direct_0_0] -no_script -reset -quiet
+upgrade_ip -vlnv MasterPlayer:user:AXIS_Counter_Direct:1.0 [get_ips  z_eth_AXIS_Counter_Direct_0_0] -log ip_upgrade.log
+Upgrading 'D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd'
+INFO: [IP_Flow 19-3422] Upgraded z_eth_AXIS_Counter_Direct_0_0 (AXI4-Stream Counter 1.0) from revision 3 to revision 4
+CRITICAL WARNING: [BD 41-1173] Cannot locate slave </axis_counter_direct/S_AXI/s_axi_lite> to create segment <SEG_axis_counter_direct_s_axi_lite> 
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Projects/z_eth_2/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2405.879 ; gain = 52.664
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Projects/CustomIP/Cores/axis_counter_2'.
+report_ip_status -name ip_status
+export_ip_user_files -of_objects [get_ips  z_eth_AXIS_Counter_Direct_0_0] -no_script -reset -quiet
+upgrade_ip -vlnv MasterPlayer:user:AXIS_Counter_Direct:1.0 [get_ips  z_eth_AXIS_Counter_Direct_0_0] -log ip_upgrade.log
+Upgrading 'D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd'
+INFO: [IP_Flow 19-1972] Upgraded z_eth_AXIS_Counter_Direct_0_0 from AXI4-Stream Counter 1.0 to AXI4-Stream Counter 1.0
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/Projects/z_eth_2/ip_upgrade.log'.
+report_ip_status -name ip_status 
+delete_bd_objs [get_bd_intf_nets axi_interconnect_1_M02_AXI]
+connect_bd_intf_net [get_bd_intf_pins axis_counter_direct/S_AXI] -boundary_type upper [get_bd_intf_pins axi_interconnect_1/M02_AXI]
+assign_bd_address
+</axis_counter_direct/S_AXI/S_AXI_REG> is being mapped into </processing_system7_0/Data> at <0x43C00000 [ 64K ]>
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ila_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 12:31:09 2017] Launched z_eth_xbar_1_synth_1, z_eth_AXIS_Counter_Direct_0_0_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_us_2_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_us_5_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_us_3_synth_1, synth_1...
+Run output will be captured here:
+z_eth_xbar_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_1_synth_1/runme.log
+z_eth_AXIS_Counter_Direct_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_AXIS_Counter_Direct_0_0_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 12:31:10 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2502.980 ; gain = 48.414
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+
+launch_sdk -workspace D:/Projects/z_eth_2/z_eth.sdk -hwspec D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace D:/Projects/z_eth_2/z_eth.sdk -hwspec D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_hw
+connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+current_hw_target [get_hw_targets */xilinx_tcf/Xilinx/00001292902c01]
+set_property PARAM.FREQUENCY 6000000 [get_hw_targets */xilinx_tcf/Xilinx/00001292902c01]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+set_property PROGRAM.FILE {D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.bit} [lindex [get_hw_devices] 1]
+set_property PROBES.FILE {D:/Projects/z_eth_2/z_eth.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 1]
+current_hw_device [lindex [get_hw_devices] 1]
+refresh_hw_device [lindex [get_hw_devices] 1]
+WARNING: [Xicom 50-38] xicom: No CseXsdb register file specified for CseXsdb slave type: 0, cse driver version: 0. Slave initialization skipped.
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtools 27-1974] Mismatch between the design programmed into the device xc7z010_1 and the probes file D:/Projects/z_eth_2/z_eth.runs/impl_1/debug_nets.ltx.
+The device design has 0 ILA core(s) and 0 VIO core(s). The probes file has 1 ILA core(s) and 0 VIO core(s).
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file OR
+2. Goto device properties and associate the correct probes file with the programming file already programmed in the device.
+refresh_hw_device [lindex [get_hw_devices] 1]
+INFO: [Labtools 27-2302] Device xc7z010 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:46:44
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:46:44
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:46:49
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:46:49
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:47:04
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:47:04
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {D:/Projects/z_eth_2/z_eth.runs/impl_1/debug_nets.ltx} [lindex [get_hw_devices] 1]
+set_property PROGRAM.FILE {D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.bit} [lindex [get_hw_devices] 1]
+program_hw_devices [lindex [get_hw_devices] 1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2520.367 ; gain = 0.000
+refresh_hw_device [lindex [get_hw_devices] 1]
+WARNING: [Xicom 50-38] xicom: No CseXsdb register file specified for CseXsdb slave type: 0, cse driver version: 0. Slave initialization skipped.
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+WARNING: [Labtools 27-1974] Mismatch between the design programmed into the device xc7z010_1 and the probes file D:/Projects/z_eth_2/z_eth.runs/impl_1/debug_nets.ltx.
+The device design has 0 ILA core(s) and 0 VIO core(s). The probes file has 1 ILA core(s) and 0 VIO core(s).
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file OR
+2. Goto device properties and associate the correct probes file with the programming file already programmed in the device.
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+refresh_hw_device [lindex [get_hw_devices] 1]
+INFO: [Labtools 27-2302] Device xc7z010 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:50:48
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:50:48
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:51:04
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:51:04
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+refresh_hw_device [lindex [get_hw_devices] 1]
+INFO: [Labtools 27-2302] Device xc7z010 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2017-Jan-19 12:52:44
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z010_1] -filter {CELL_NAME=~"z_eth_wrapper_inst/z_eth_i/ila_0"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2017-Jan-19 12:52:45
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+ERROR: [Labtools 27-55] Invalid index 1 passed to getDevice
+ERROR: [Labtools 27-2312] Device  is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+open_bd_design {D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd}
+startgroup
+set_property -dict [list CONFIG.c_mm2s_burst_size {256} CONFIG.c_s2mm_burst_size {256}] [get_bd_cells axi_dma_0]
+endgroup
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+reset_run z_eth_axi_ethernet_0_0_synth_1
+reset_run z_eth_axi_dma_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ila_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 12:56:50 2017] Launched z_eth_axi_ethernet_0_0_synth_1, z_eth_axi_dma_0_0_synth_1, z_eth_xbar_2_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_us_5_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_2_synth_1, synth_1...
+Run output will be captured here:
+z_eth_axi_ethernet_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_0_synth_1/runme.log
+z_eth_axi_dma_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_dma_0_0_synth_1/runme.log
+z_eth_xbar_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_2_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 12:56:50 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2589.586 ; gain = 44.199
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/00001292902c01.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtools 27-55] Invalid index 0 passed to getDevice
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/00001292902c01.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtools 27-55] Invalid index 0 passed to getDevice
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+ERROR: [Labtools 27-55] Invalid index 1 passed to getDevice
+ERROR: [Labtools 27-2312] Device  is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/00001292902c01.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Labtools 27-55] Invalid index 0 passed to getDevice
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/00001292902c01
+startgroup
+set_property -dict [list CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {125} CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {DDR PLL}] [get_bd_cells processing_system7_0]
+endgroup
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+reset_run synth_1
+reset_run z_eth_processing_system7_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+ERROR: [BD 41-238] Port/Pin property FREQ_HZ does not match between /axi_ethernet_0/gtx_clk(125000000) and /processing_system7_0/FCLK_CLK1(118518517)
+ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd 
+ERROR: [Vivado 12-4756] Launch of runs aborted due to earlier errors while preparing sub-designs for run execution.
+startgroup
+set_property -dict [list CONFIG.PCW_FCLK0_PERIPHERAL_CLKSRC {IO PLL} CONFIG.PCW_FCLK1_PERIPHERAL_CLKSRC {IO PLL}] [get_bd_cells processing_system7_0]
+endgroup
+delete_bd_objs [get_bd_cells ila_0]
+startgroup
+set_property -dict [list CONFIG.PCW_SPI0_PERIPHERAL_ENABLE {1}] [get_bd_cells processing_system7_0]
+endgroup
+delete_bd_objs [get_bd_nets axis_counter_direct_M_AXIS_TDATA] [get_bd_nets axis_counter_direct_M_AXIS_TLAST] [get_bd_nets axis_counter_direct_M_AXIS_TKEEP] [get_bd_nets Net] [get_bd_nets axis_counter_direct_M_AXIS_TVALID]
+connect_bd_intf_net [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axis_counter_direct/M_AXIS]
+regenerate_bd_layout
+validate_bd_design
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+validate_bd_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2614.656 ; gain = 0.000
+save_bd_design
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+INFO: [BD 41-1662] The design 'z_eth.bd' is already validated. Therefore parameter propagation will not be re-run.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+WARNING: [xilinx.com:ip:processing_system7:5.5-1] z_eth_processing_system7_0_0: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+[Thu Jan 19 18:20:09 2017] Launched z_eth_processing_system7_0_0_synth_1, z_eth_axi_ethernet_0_0_synth_1, bd_8314_eth_buf_0_synth_1, bd_8314_eth_mac_0_synth_1, z_eth_xbar_0_synth_1, z_eth_proc_sys_reset_0_0_synth_1, z_eth_xbar_1_synth_1, z_eth_axi_ethernet_0_dma_1_synth_1, z_eth_axi_dma_0_0_synth_1, z_eth_xbar_2_synth_1, z_eth_axi_timer_0_0_synth_1, z_eth_AXI4_Stream_Checker_0_0_synth_1, z_eth_AXIS_Counter_Direct_0_0_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_us_5_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_us_2_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_pc_1_synth_1, synth_1...
+Run output will be captured here:
+z_eth_processing_system7_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_processing_system7_0_0_synth_1/runme.log
+z_eth_axi_ethernet_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_0_synth_1/runme.log
+bd_8314_eth_buf_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/bd_8314_eth_buf_0_synth_1/runme.log
+bd_8314_eth_mac_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/bd_8314_eth_mac_0_synth_1/runme.log
+z_eth_xbar_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_0_synth_1/runme.log
+z_eth_proc_sys_reset_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_proc_sys_reset_0_0_synth_1/runme.log
+z_eth_xbar_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_1_synth_1/runme.log
+z_eth_axi_ethernet_0_dma_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_dma_1_synth_1/runme.log
+z_eth_axi_dma_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_dma_0_0_synth_1/runme.log
+z_eth_xbar_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_xbar_2_synth_1/runme.log
+z_eth_axi_timer_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_timer_0_0_synth_1/runme.log
+z_eth_AXI4_Stream_Checker_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_AXI4_Stream_Checker_0_0_synth_1/runme.log
+z_eth_AXIS_Counter_Direct_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_AXIS_Counter_Direct_0_0_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+synth_1: D:/Projects/z_eth_2/z_eth.runs/synth_1/runme.log
+[Thu Jan 19 18:20:09 2017] Launched impl_1...
+Run output will be captured here: D:/Projects/z_eth_2/z_eth.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 2642.332 ; gain = 27.676
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_0
+WARNING: [BD 41-176] The physical port 'di' specified in the portmap, is not found on the block! 
+WARNING: [BD 41-176] The physical port 'di' specified in the portmap, is not found on the block! 
+endgroup
+delete_bd_objs [get_bd_cells axi_quad_spi_0]
+set_param general.MaxThreads 4
+4
+set_param general.NumThreads 4
+ERROR: [Common 17-153] Param 'general.NumThreads' does not exist
+generate_target all [get_files  D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd]
+WARNING: [#UNDEF] When using EMIO pins for SPI_0 tie SSIN High in the PL bitstream
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_0/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_bid'(2) to net 'auto_pc_to_m00_couplers_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_interconnect_2/m00_couplers/auto_pc/m_axi_rid'(2) to net 'auto_pc_to_m00_couplers_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_interconnect_0_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_interconnect_0_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_interconnect_0_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_WID'(6) to net 'axi_interconnect_2_M00_AXI_WID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_ARID'(6) to net 'axi_interconnect_2_M00_AXI_ARID'(2) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP1_AWID'(6) to net 'axi_interconnect_2_M00_AXI_AWID'(2) - Only lower order bits will be connected.
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd
+VHDL Output written to : D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd
+Wrote  : <D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd> 
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+Exporting to file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0.hwh
+Generated Block Design Tcl file d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hw_handoff/z_eth_axi_ethernet_0_0_bd.tcl
+Generated Hardware Definition File d:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/hdl/z_eth_axi_ethernet_0_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block proc_sys_reset_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_ethernet_0_dma .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_checker .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axis_counter_direct .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s02_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_1/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_2/s02_couplers/auto_us .
+Exporting to file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth.hwh
+Generated Block Design Tcl file D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hw_handoff/z_eth_bd.tcl
+Generated Hardware Definition File D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.hwdef
+generate_target: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2840.484 ; gain = 56.430
+export_ip_user_files -of_objects [get_files D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd] -no_script -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd]
+reset_run z_eth_axi_ethernet_0_0_synth_1
+launch_run -jobs 2 {z_eth_axi_ethernet_0_0_synth_1 z_eth_auto_pc_0_synth_1 z_eth_auto_us_0_synth_1 z_eth_auto_us_1_synth_1 z_eth_auto_us_2_synth_1 z_eth_auto_pc_1_synth_1 z_eth_auto_pc_2_synth_1 z_eth_auto_us_3_synth_1 z_eth_auto_us_4_synth_1 z_eth_auto_us_5_synth_1}
+[Thu Jan 19 18:53:40 2017] Launched z_eth_axi_ethernet_0_0_synth_1, z_eth_auto_pc_0_synth_1, z_eth_auto_us_0_synth_1, z_eth_auto_us_1_synth_1, z_eth_auto_us_2_synth_1, z_eth_auto_pc_1_synth_1, z_eth_auto_pc_2_synth_1, z_eth_auto_us_3_synth_1, z_eth_auto_us_4_synth_1, z_eth_auto_us_5_synth_1...
+Run output will be captured here:
+z_eth_axi_ethernet_0_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_axi_ethernet_0_0_synth_1/runme.log
+z_eth_auto_pc_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_0_synth_1/runme.log
+z_eth_auto_us_0_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_0_synth_1/runme.log
+z_eth_auto_us_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_1_synth_1/runme.log
+z_eth_auto_us_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_2_synth_1/runme.log
+z_eth_auto_pc_1_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_1_synth_1/runme.log
+z_eth_auto_pc_2_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_pc_2_synth_1/runme.log
+z_eth_auto_us_3_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_3_synth_1/runme.log
+z_eth_auto_us_4_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_4_synth_1/runme.log
+z_eth_auto_us_5_synth_1: D:/Projects/z_eth_2/z_eth.runs/z_eth_auto_us_5_synth_1/runme.log
+export_simulation -of_objects [get_files D:/Projects/z_eth_2/z_eth.srcs/sources_1/bd/z_eth/z_eth.bd] -directory D:/Projects/z_eth_2/z_eth.ip_user_files/sim_scripts -ip_user_files_dir D:/Projects/z_eth_2/z_eth.ip_user_files -ipstatic_source_dir D:/Projects/z_eth_2/z_eth.ip_user_files/ipstatic -force -quiet
+INFO: [Vivado 12-4159] Implementation run is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-run implementation and re-generate bitstream before doing hardware export.
+file copy -force D:/Projects/z_eth_2/z_eth.runs/impl_1/z_eth_top.sysdef D:/Projects/z_eth_2/z_eth.sdk/z_eth_top.hdf
+

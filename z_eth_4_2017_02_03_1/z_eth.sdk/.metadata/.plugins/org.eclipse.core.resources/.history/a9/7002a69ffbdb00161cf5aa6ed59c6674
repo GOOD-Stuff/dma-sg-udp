@@ -1,0 +1,115 @@
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include "lwip/err.h"
+#include "lwip/tcp.h"
+#include "xil_printf.h"
+
+
+#define FWD_PORT 			50500
+#define BUFFER_SIZE			2200
+#define LDA_DELAY 			31 //00110001 IS COMMAND FOR setup_delay
+#define RST_CNTR		 	206
+
+
+void SetDelayValue();
+void ResetCounter();
+int start_application();
+
+
+int out_buf_i = 0;
+int port = FWD_PORT;
+int Buffer[BUFFER_SIZE];
+
+
+struct ip_addr forward_ip;
+struct udp_pcb *upcb;
+struct pbuf *p;
+
+
+u8_t iCmd = 0;
+u32_t DValue_1 = 0;
+
+
+void ParseCommand(int cmd, int value){
+	if (cmd == LDA_DELAY){
+		xil_printf("FindCommand: Code %x, Description: Setup Delay's Value is %d \r\n", cmd, value);
+		SetDelayValue(value);
+	}else{
+	if (cmd == RST_CNTR){
+		xil_printf("FindCommand: Code %x, Description: Reset Counter's value");
+		ResetCounter();
+	}
+	}
+}
+
+
+err_t recv_callback(void *arg, struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port){
+	iCmd = *(u8_t*)(p->payload);
+	DValue_1 = *(u32_t*)(p->payload+1);
+	ParseCommand(iCmd, DValue_1);
+	return ERR_OK;
+}
+
+
+
+void udp_sample(int sample){
+	Buffer[2199] = sample;
+	p = pbuf_alloc(PBUF_TRANSPORT, BUFFER_SIZE* sizeof(int), PBUF_REF);
+	pbuf_take(p, &Buffer, BUFFER_SIZE*sizeof(int));
+	udp_send(upcb, p);
+	pbuf_free(p);
+}
+
+
+
+void start_udp(){
+	struct udp_pcb *ptel_pcb = udp_new();
+	udp_bind(ptel_pcb, IP_ADDR_ANY, port);
+	IP4_ADDR(&forward_ip, 192, 168,   1, 100);
+	xil_printf("ListeningUDP from port = %d", port);
+	udp_recv(ptel_pcb, recv_callback, NULL);
+	upcb = udp_new();
+	udp_connect(upcb, &forward_ip, FWD_PORT);
+}
+
+
+
+
+void print_app_header()
+{
+	xil_printf("\n\r\n\r-----lwIP TCP echo server ------\n\r");
+	xil_printf("TCP packets sent to port 6001 will be echoed back\n\r");
+}
+

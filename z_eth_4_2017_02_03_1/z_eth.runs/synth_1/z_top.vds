@@ -1,0 +1,962 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Wed Feb 08 14:55:49 2017
+# Process ID: 480
+# Current directory: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1
+# Command line: vivado.exe -log z_top.vds -mode batch -messageDb vivado.pb -notrace -source z_top.tcl
+# Log file: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/z_top.vds
+# Journal file: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source z_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/Cores/axis_counter_2'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.1/data/ip'.
+add_files: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 390.051 ; gain = 184.168
+Command: synth_design -top z_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3760 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 451.836 ; gain = 245.953
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-2519] partially associated formal gpio_o cannot have actual OPEN [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:166]
+WARNING: [Synth 8-2519] partially associated formal gpio_o cannot have actual OPEN [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:167]
+WARNING: [Synth 8-2519] partially associated formal gpio_o cannot have actual OPEN [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:168]
+WARNING: [Synth 8-2519] partially associated formal gpio_o cannot have actual OPEN [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'z_top' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:58]
+INFO: [Synth 8-3491] module 'z_eth_wrapper' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd:14' bound to instance 'z_eth_wrapper_inst' of component 'z_eth_wrapper' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'z_eth_wrapper' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd:56]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2016.1/scripts/rt/data/unisim_comp.v:17333' bound to instance 'mdio_ethernet_mdio_iobuf' of component 'IOBUF' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2016.1/scripts/rt/data/unisim_comp.v:17333]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-256] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/2016.1/scripts/rt/data/unisim_comp.v:17333]
+INFO: [Synth 8-3491] module 'z_eth' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5464' bound to instance 'z_eth_i' of component 'z_eth' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'z_eth' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5512]
+INFO: [Synth 8-3491] module 'z_eth_Counterv5_0_0' declared at 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_Counterv5_0_0/synth/z_eth_Counterv5_0_0.vhd:56' bound to instance 'Counterv5_0' of component 'z_eth_Counterv5_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6515]
+INFO: [Synth 8-638] synthesizing module 'z_eth_Counterv5_0_0' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_Counterv5_0_0/synth/z_eth_Counterv5_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'Counterv5' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/AXIS_COUNTER.vhd:8' bound to instance 'U0' of component 'Counterv5' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_Counterv5_0_0/synth/z_eth_Counterv5_0_0.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'Counterv5' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/AXIS_COUNTER.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'Counterv5' (2#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/AXIS_COUNTER.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_Counterv5_0_0' (3#1) [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_Counterv5_0_0/synth/z_eth_Counterv5_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'z_eth_SPI_Mux_0_0' declared at 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_SPI_Mux_0_0/synth/z_eth_SPI_Mux_0_0.vhd:56' bound to instance 'SPI_Mux_0' of component 'z_eth_SPI_Mux_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6526]
+INFO: [Synth 8-638] synthesizing module 'z_eth_SPI_Mux_0_0' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_SPI_Mux_0_0/synth/z_eth_SPI_Mux_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'SPI_Mux' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/SPI_MUX.vhd:5' bound to instance 'U0' of component 'SPI_Mux' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_SPI_Mux_0_0/synth/z_eth_SPI_Mux_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'SPI_Mux' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/SPI_MUX.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'SPI_Mux' (4#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/new/SPI_MUX.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_SPI_Mux_0_0' (5#1) [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_SPI_Mux_0_0/synth/z_eth_SPI_Mux_0_0.vhd:69]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5938]
+INFO: [Synth 8-3491] module 'z_eth_axi_dma_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'z_eth_axi_dma_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6537]
+INFO: [Synth 8-638] synthesizing module 'z_eth_axi_dma_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_dma_0_0_stub.vhdl:84]
+INFO: [Synth 8-3491] module 'z_eth_axi_ethernet_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_ethernet_0_0_stub.vhdl:5' bound to instance 'axi_ethernet_0' of component 'z_eth_axi_ethernet_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6612]
+INFO: [Synth 8-638] synthesizing module 'z_eth_axi_ethernet_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_ethernet_0_0_stub.vhdl:72]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5805]
+INFO: [Synth 8-3491] module 'z_eth_axi_ethernet_0_dma_1' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_ethernet_0_dma_1_stub.vhdl:5' bound to instance 'axi_ethernet_0_dma' of component 'z_eth_axi_ethernet_0_dma_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6676]
+INFO: [Synth 8-638] synthesizing module 'z_eth_axi_ethernet_0_dma_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_axi_ethernet_0_dma_1_stub.vhdl:117]
+INFO: [Synth 8-638] synthesizing module 'z_eth_axi_interconnect_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3083]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_XC2TMU' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:617]
+INFO: [Synth 8-3491] module 'z_eth_auto_pc_2' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'z_eth_auto_pc_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:860]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_pc_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_2_stub.vhdl:90]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_XC2TMU' (6#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:617]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_CUO9D9' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2099]
+INFO: [Synth 8-3491] module 'z_eth_auto_us_3' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_3_stub.vhdl:5' bound to instance 'auto_us' of component 'z_eth_auto_us_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2307]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_us_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_3_stub.vhdl:83]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_CUO9D9' (7#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2099]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_162XJ0L' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2430]
+INFO: [Synth 8-3491] module 'z_eth_auto_us_4' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_4_stub.vhdl:5' bound to instance 'auto_us' of component 'z_eth_auto_us_4' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2549]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_us_4' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_4_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_162XJ0L' (8#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2430]
+INFO: [Synth 8-3491] module 'z_eth_xbar_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'z_eth_xbar_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3640]
+INFO: [Synth 8-638] synthesizing module 'z_eth_xbar_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_0_stub.vhdl:89]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_axi_interconnect_0_0' (9#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3083]
+INFO: [Synth 8-638] synthesizing module 'z_eth_axi_mem_intercon_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3870]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_QC7WWY' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:201]
+INFO: [Synth 8-3491] module 'z_eth_auto_pc_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'z_eth_auto_pc_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:444]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_pc_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_0_stub.vhdl:90]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_QC7WWY' (10#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:201]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_2DV9MX' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1430]
+INFO: [Synth 8-3491] module 'z_eth_auto_us_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_0_stub.vhdl:5' bound to instance 'auto_us' of component 'z_eth_auto_us_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1638]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_us_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_0_stub.vhdl:83]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_2DV9MX' (11#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1430]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_1D7VSDD' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2634]
+INFO: [Synth 8-3491] module 'z_eth_auto_us_1' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_1_stub.vhdl:5' bound to instance 'auto_us' of component 'z_eth_auto_us_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2735]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_us_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_1_stub.vhdl:45]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_1D7VSDD' (12#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2634]
+INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_18FD7H4' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2820]
+INFO: [Synth 8-3491] module 'z_eth_auto_us_2' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_2_stub.vhdl:5' bound to instance 'auto_us' of component 'z_eth_auto_us_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2939]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_us_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_us_2_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_18FD7H4' (13#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2820]
+INFO: [Synth 8-3491] module 'z_eth_xbar_3' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_3_stub.vhdl:5' bound to instance 'xbar' of component 'z_eth_xbar_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4511]
+INFO: [Synth 8-638] synthesizing module 'z_eth_xbar_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_3_stub.vhdl:89]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_axi_mem_intercon_2' (14#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3870]
+INFO: [Synth 8-3491] module 'z_eth_ila_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_ila_0_0_stub.vhdl:5' bound to instance 'ila_0' of component 'z_eth_ila_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6987]
+INFO: [Synth 8-638] synthesizing module 'z_eth_ila_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_ila_0_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'z_eth_ila_1_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_ila_1_0_stub.vhdl:5' bound to instance 'ila_1' of component 'z_eth_ila_1_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6995]
+INFO: [Synth 8-638] synthesizing module 'z_eth_ila_1_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_ila_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'z_eth_processing_system7_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'z_eth_processing_system7_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7018]
+INFO: [Synth 8-638] synthesizing module 'z_eth_processing_system7_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_processing_system7_0_0_stub.vhdl:222]
+INFO: [Synth 8-638] synthesizing module 'z_eth_processing_system7_0_axi_periph_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4996]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1S62BFP' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1S62BFP' (15#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_QAF4P9' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:988]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_QAF4P9' (16#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:988]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1D5X18U' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1109]
+INFO: [Synth 8-3491] module 'z_eth_auto_pc_1' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'z_eth_auto_pc_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1292]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_pc_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_1_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1D5X18U' (17#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1109]
+INFO: [Synth 8-3491] module 'z_eth_xbar_2' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_2_stub.vhdl:5' bound to instance 'xbar' of component 'z_eth_xbar_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5399]
+INFO: [Synth 8-638] synthesizing module 'z_eth_xbar_2' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xbar_2_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_processing_system7_0_axi_periph_1' (18#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4996]
+INFO: [Synth 8-638] synthesizing module 'z_eth_processing_system7_0_axi_periph_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4728]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_38ICSO' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1781]
+INFO: [Synth 8-3491] module 'z_eth_auto_pc_3' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_3_stub.vhdl:5' bound to instance 'auto_pc' of component 'z_eth_auto_pc_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1961]
+INFO: [Synth 8-638] synthesizing module 'z_eth_auto_pc_3' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_auto_pc_3_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_38ICSO' (19#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1781]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_processing_system7_0_axi_periph_0' (20#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4728]
+INFO: [Synth 8-3491] module 'z_eth_rst_processing_system7_0_125M_1' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_rst_processing_system7_0_125M_1_stub.vhdl:5' bound to instance 'rst_processing_system7_0_100M' of component 'z_eth_rst_processing_system7_0_125M_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7383]
+INFO: [Synth 8-638] synthesizing module 'z_eth_rst_processing_system7_0_125M_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_rst_processing_system7_0_125M_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'z_eth_rst_processing_system7_0_125M_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_rst_processing_system7_0_125M_0_stub.vhdl:5' bound to instance 'rst_processing_system7_0_125M' of component 'z_eth_rst_processing_system7_0_125M_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7396]
+INFO: [Synth 8-638] synthesizing module 'z_eth_rst_processing_system7_0_125M_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_rst_processing_system7_0_125M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'z_eth_vio_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_vio_0_0_stub.vhdl:5' bound to instance 'vio_0' of component 'z_eth_vio_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7409]
+INFO: [Synth 8-638] synthesizing module 'z_eth_vio_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_vio_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'z_eth_xlconcat_0_0' declared at 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xlconcat_0_0_stub.vhdl:5' bound to instance 'xlconcat_0' of component 'z_eth_xlconcat_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7415]
+INFO: [Synth 8-638] synthesizing module 'z_eth_xlconcat_0_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/realtime/z_eth_xlconcat_0_0_stub.vhdl:17]
+INFO: [Synth 8-256] done synthesizing module 'z_eth' (21#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5512]
+INFO: [Synth 8-256] done synthesizing module 'z_eth_wrapper' (22#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth_wrapper.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'z_top' (23#1) [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/imports/new/z_top.vhd:58]
+WARNING: [Synth 8-3331] design s00_couplers_imp_38ICSO has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_38ICSO has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port ARESETN[0]
+WARNING: [Synth 8-3331] design s00_couplers_imp_1D5X18U has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1D5X18U has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m01_couplers_imp_QAF4P9 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_QAF4P9 has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m01_couplers_imp_QAF4P9 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_QAF4P9 has unconnected port S_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S62BFP has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S62BFP has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S62BFP has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1S62BFP has unconnected port S_ARESETN[0]
+WARNING: [Synth 8-3331] design s02_couplers_imp_18FD7H4 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s02_couplers_imp_18FD7H4 has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design s01_couplers_imp_1D7VSDD has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_1D7VSDD has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design s00_couplers_imp_2DV9MX has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_2DV9MX has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_bid[5]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_bid[4]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_bid[3]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_bid[2]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_rid[5]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_rid[4]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_rid[3]
+WARNING: [Synth 8-3331] design m00_couplers_imp_QC7WWY has unconnected port M_AXI_rid[2]
+WARNING: [Synth 8-3331] design s01_couplers_imp_162XJ0L has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_162XJ0L has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design s00_couplers_imp_CUO9D9 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_CUO9D9 has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_ARESETN[0]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_bid[5]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_bid[4]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_bid[3]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_bid[2]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_bid[1]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_rid[5]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_rid[4]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_rid[3]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_rid[2]
+WARNING: [Synth 8-3331] design m00_couplers_imp_XC2TMU has unconnected port M_AXI_rid[1]
+WARNING: [Synth 8-3331] design z_top has unconnected port PHY_CLK125
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 575.840 ; gain = 369.957
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 575.840 ; gain = 369.957
+---------------------------------------------------------------------------------
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_pc_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/m00_couplers/auto_pc' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:444]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_pc_1' instantiated as 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/s00_couplers/auto_pc' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1292]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_pc_2' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/m00_couplers/auto_pc' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:860]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_pc_3' instantiated as 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1/s00_couplers/auto_pc' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1961]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_us_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:1638]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_us_1' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2735]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_us_2' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2939]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_us_3' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2307]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_auto_us_4' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:2549]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_axi_dma_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_dma_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6537]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_axi_ethernet_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6612]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_axi_ethernet_0_dma_1' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6676]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_ila_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/ila_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6987]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_ila_1_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/ila_1' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:6995]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_processing_system7_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/processing_system7_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7018]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_rst_processing_system7_0_125M_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7396]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_rst_processing_system7_0_125M_1' instantiated as 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7383]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_vio_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/vio_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7409]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_xbar_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/xbar' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:3640]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_xbar_2' instantiated as 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/xbar' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:5399]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_xbar_3' instantiated as 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/xbar' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:4511]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'z_eth_xlconcat_0_0' instantiated as 'z_eth_wrapper_inst/z_eth_i/xlconcat_0' [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/hdl/z_eth.vhd:7415]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_5/z_eth_axi_ethernet_0_dma_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_5/z_eth_axi_ethernet_0_dma_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_6/z_eth_rst_processing_system7_0_125M_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_6/z_eth_rst_processing_system7_0_125M_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_7/z_eth_xbar_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/xbar'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_7/z_eth_xbar_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/xbar'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_8/z_eth_xlconcat_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/xlconcat_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_8/z_eth_xlconcat_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/xlconcat_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_9/z_eth_xbar_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/xbar'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_9/z_eth_xbar_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/xbar'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_10/z_eth_axi_dma_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_10/z_eth_axi_dma_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_11/z_eth_xbar_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/xbar'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_11/z_eth_xbar_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/xbar'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_12/z_eth_rst_processing_system7_0_125M_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_12/z_eth_rst_processing_system7_0_125M_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_13/z_eth_vio_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/vio_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_13/z_eth_vio_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/vio_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_14/z_eth_ila_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_0'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_14/z_eth_ila_0_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_15/z_eth_ila_1_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_1'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_15/z_eth_ila_1_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_1'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_16/z_eth_auto_pc_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/m00_couplers/auto_pc'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_16/z_eth_auto_pc_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/m00_couplers/auto_pc'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_17/z_eth_auto_us_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_17/z_eth_auto_us_0_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_18/z_eth_auto_us_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_18/z_eth_auto_us_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_19/z_eth_auto_us_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_19/z_eth_auto_us_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_20/z_eth_auto_pc_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_20/z_eth_auto_pc_1_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_21/z_eth_auto_pc_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/m00_couplers/auto_pc'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_21/z_eth_auto_pc_2_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/m00_couplers/auto_pc'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_22/z_eth_auto_us_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_22/z_eth_auto_us_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_23/z_eth_auto_us_4_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_23/z_eth_auto_us_4_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_24/z_eth_auto_pc_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1/s00_couplers/auto_pc'
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_24/z_eth_auto_pc_3_in_context.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1/s00_couplers/auto_pc'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/constrs_1/new/z_eth_top.xdc]
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/constrs_1/new/z_eth_top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/constrs_1/new/z_eth_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/z_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/z_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 786.684 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma' at clock pin 'm_axi_mm2s_aclk' is different from the actual clock period '8.000', this can result in different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cke. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cke. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 95).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 96).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 97).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 98).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 99).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 100).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 101).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 102).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 103).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 104).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 105).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 106).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 107).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 108).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 109).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 110).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 111).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 112).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 113).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 114).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 115).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 116).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 117).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 118).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 119).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 120).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 121).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 122).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 123).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 124).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 125).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 126).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 127).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 128).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 129).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 130).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 131).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 132).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 133).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 134).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 135).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 136).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 137).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 138).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 139).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_odt. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 140).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_odt. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 141).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 142).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 143).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 144).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 145).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 146).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 147).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 148).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 149).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 150).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 151).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 152).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 153).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 154).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 155).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 156).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 157).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 158).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 159).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 160).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 161).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 162).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 163).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 164).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 165).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 166).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 167).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 168).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 169).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 170).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 171).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 172).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 173).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 174).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 175).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 176).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 177).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 178).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 179).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 180).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 181).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 182).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 183).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 184).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 185).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 186).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 187).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 188).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 189).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 190).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 191).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 192).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 193).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 194).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 195).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 196).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 197).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 198).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 199).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 200).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 201).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 202).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 203).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 204).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 205).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 206).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 207).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 208).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 209).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 210).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 211).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 212).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 213).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 214).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 215).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 216).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 217).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 218).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 219).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 220).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 221).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 222).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 223).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 224).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 225).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 226).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 227).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 228).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 229).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 230).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 231).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 232).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 233).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 234).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 235).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 236).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 237).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 238).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 239).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 240).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 241).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 242).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 243).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 244).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 245).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 246).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 247).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 248).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 249).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 250).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 251).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 252).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 253).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 254).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 255).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 256).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 257).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 258).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 259).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 260).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 261).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 262).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp/z_eth_processing_system7_0_0_in_context.xdc, line 263).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RXD[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 23).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RXD[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 24).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RXD[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 25).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RXD[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 26).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RXD[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 27).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RXD[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 28).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RXD[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 29).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RXD[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 30).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RX_DV. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 31).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RX_DV. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 32).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_RX_CLK. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 33).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_RX_CLK. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 34).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_TXD[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 35).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_TXD[0]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 36).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_TXD[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 37).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_TXD[1]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 38).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_TXD[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 39).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_TXD[2]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 40).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_TXD[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 41).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_TXD[3]. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 42).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_TX_EN. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 43).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_TX_EN. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 44).
+Applied set_property IO_BUFFER_TYPE = NONE for RGMII_GTX_CLK. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 45).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for RGMII_GTX_CLK. (constraint file  C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/synth_1/.Xil/Vivado-480-vldmr-PC/dcp_4/z_eth_axi_ethernet_0_0_in_context.xdc, line 46).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/Counterv5_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/SPI_Mux_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_dma_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_ethernet_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_interconnect_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/ila_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/ila_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/vio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for z_eth_wrapper_inst/z_eth_i/xlconcat_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Counterv5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module SPI_Mux 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port ACLK
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_0 has unconnected port M00_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_1 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_1 has unconnected port M00_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_1 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design z_eth_processing_system7_0_axi_periph_1 has unconnected port M01_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_bid[5]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_bid[4]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_bid[3]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_bid[2]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_rid[5]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_rid[4]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_rid[3]
+WARNING: [Synth 8-3331] design z_eth_axi_mem_intercon_2 has unconnected port M00_AXI_rid[2]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_ARESETN[0]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_bid[5]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_bid[4]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_bid[3]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_bid[2]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_bid[1]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_rid[5]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_rid[4]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_rid[3]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_rid[2]
+WARNING: [Synth 8-3331] design z_eth_axi_interconnect_0_0 has unconnected port M00_AXI_rid[1]
+WARNING: [Synth 8-3331] design z_top has unconnected port PHY_CLK125
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 580.801
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/FCLK_CLK0' to pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/FCLK_CLK1' to pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/FCLK_CLK2' to pin 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK2/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/interrupt' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_interrupt/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/m_axis_rxd_tlast' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_m_axis_rxd_tlast/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/m_axis_rxd_tvalid' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_m_axis_rxd_tvalid/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/m_axis_rxs_tlast' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_m_axis_rxs_tlast/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/m_axis_rxs_tvalid' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_m_axis_rxs_tvalid/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/phy_rst_n' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_phy_rst_n/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/rgmii_txc' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_rgmii_txc/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axi_arready' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axi_arready/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axi_awready' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axi_awready/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axi_bvalid' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axi_bvalid/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axi_rvalid' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axi_rvalid/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axi_wready' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axi_wready/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axis_txc_tready' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axis_txc_tready/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/s_axis_txd_tready' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_s_axis_txd_tready/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk90_out' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_gtx_clk90_out/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk_out' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_gtx_clk_out/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/mac_irq' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_mac_irq/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/mdio_mdc' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_mdio_mdc/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/mdio_mdio_o' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_mdio_mdio_o/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/mdio_mdio_t' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_mdio_mdio_t/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/rgmii_tx_ctl' to pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/bbstub_rgmii_tx_ctl/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/gtx_clk' to 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5820] Moved 25 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:45 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:46 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------+----------+
+|      |BlackBox name                         |Instances |
++------+--------------------------------------+----------+
+|1     |z_eth_axi_dma_0_0                     |         1|
+|2     |z_eth_axi_ethernet_0_0                |         1|
+|3     |z_eth_axi_ethernet_0_dma_1            |         1|
+|4     |z_eth_xbar_0                          |         1|
+|5     |z_eth_auto_pc_2                       |         1|
+|6     |z_eth_auto_us_3                       |         1|
+|7     |z_eth_auto_us_4                       |         1|
+|8     |z_eth_xbar_3                          |         1|
+|9     |z_eth_auto_pc_0                       |         1|
+|10    |z_eth_auto_us_0                       |         1|
+|11    |z_eth_auto_us_1                       |         1|
+|12    |z_eth_auto_us_2                       |         1|
+|13    |z_eth_ila_0_0                         |         1|
+|14    |z_eth_ila_1_0                         |         1|
+|15    |z_eth_processing_system7_0_0          |         1|
+|16    |z_eth_xbar_2                          |         1|
+|17    |z_eth_auto_pc_1                       |         1|
+|18    |z_eth_auto_pc_3                       |         1|
+|19    |z_eth_rst_processing_system7_0_125M_1 |         1|
+|20    |z_eth_rst_processing_system7_0_125M_0 |         1|
+|21    |z_eth_vio_0_0                         |         1|
+|22    |z_eth_xlconcat_0_0                    |         1|
++------+--------------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------------+------+
+|      |Cell                                       |Count |
++------+-------------------------------------------+------+
+|1     |z_eth_auto_pc_0_bbox                       |     1|
+|2     |z_eth_auto_pc_1_bbox                       |     1|
+|3     |z_eth_auto_pc_2_bbox                       |     1|
+|4     |z_eth_auto_pc_3_bbox                       |     1|
+|5     |z_eth_auto_us_0_bbox                       |     1|
+|6     |z_eth_auto_us_1_bbox                       |     1|
+|7     |z_eth_auto_us_2_bbox                       |     1|
+|8     |z_eth_auto_us_3_bbox                       |     1|
+|9     |z_eth_auto_us_4_bbox                       |     1|
+|10    |z_eth_axi_dma_0_0_bbox                     |     1|
+|11    |z_eth_axi_ethernet_0_0_bbox                |     1|
+|12    |z_eth_axi_ethernet_0_dma_1_bbox            |     1|
+|13    |z_eth_ila_0_0_bbox                         |     1|
+|14    |z_eth_ila_1_0_bbox                         |     1|
+|15    |z_eth_processing_system7_0_0_bbox          |     1|
+|16    |z_eth_rst_processing_system7_0_125M_0_bbox |     1|
+|17    |z_eth_rst_processing_system7_0_125M_1_bbox |     1|
+|18    |z_eth_vio_0_0_bbox                         |     1|
+|19    |z_eth_xbar_0_bbox                          |     1|
+|20    |z_eth_xbar_2_bbox                          |     1|
+|21    |z_eth_xbar_3_bbox                          |     1|
+|22    |z_eth_xlconcat_0_0_bbox                    |     1|
+|23    |CARRY4                                     |    31|
+|24    |LUT1                                       |   106|
+|25    |LUT2                                       |     1|
+|26    |LUT4                                       |    34|
+|27    |LUT5                                       |     1|
+|28    |LUT6                                       |    10|
+|29    |FDRE                                       |    70|
+|30    |IBUF                                       |     4|
+|31    |IOBUF                                      |     1|
+|32    |OBUF                                       |     8|
++------+-------------------------------------------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+----------------------------------------+------+
+|      |Instance                               |Module                                  |Cells |
++------+---------------------------------------+----------------------------------------+------+
+|1     |top                                    |                                        |  4644|
+|2     |  z_eth_wrapper_inst                   |z_eth_wrapper                           |  4632|
+|3     |    z_eth_i                            |z_eth                                   |  4631|
+|4     |      Counterv5_0                      |z_eth_Counterv5_0_0                     |   238|
+|5     |        U0                             |Counterv5                               |   238|
+|6     |      SPI_Mux_0                        |z_eth_SPI_Mux_0_0                       |     5|
+|7     |        U0                             |SPI_Mux                                 |     5|
+|8     |      axi_interconnect_0               |z_eth_axi_interconnect_0_0              |  1003|
+|9     |        m00_couplers                   |m00_couplers_imp_XC2TMU                 |   265|
+|10    |        s00_couplers                   |s00_couplers_imp_CUO9D9                 |   242|
+|11    |        s01_couplers                   |s01_couplers_imp_162XJ0L                |   142|
+|12    |      axi_mem_intercon                 |z_eth_axi_mem_intercon_2                |  1192|
+|13    |        m00_couplers                   |m00_couplers_imp_QC7WWY                 |   270|
+|14    |        s00_couplers                   |s00_couplers_imp_2DV9MX                 |   242|
+|15    |        s01_couplers                   |s01_couplers_imp_1D7VSDD                |   100|
+|16    |        s02_couplers                   |s02_couplers_imp_18FD7H4                |   142|
+|17    |      processing_system7_0_axi_periph  |z_eth_processing_system7_0_axi_periph_1 |   440|
+|18    |        s00_couplers                   |s00_couplers_imp_1D5X18U                |   177|
+|19    |      processing_system7_0_axi_periph1 |z_eth_processing_system7_0_axi_periph_0 |   177|
+|20    |        s00_couplers                   |s00_couplers_imp_38ICSO                 |   177|
++------+---------------------------------------+----------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 786.684 ; gain = 580.801
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 786.684 ; gain = 185.789
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:46 . Memory (MB): peak = 786.684 ; gain = 580.801
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+145 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 786.684 ; gain = 396.633
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 786.684 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 08 14:56:37 2017...

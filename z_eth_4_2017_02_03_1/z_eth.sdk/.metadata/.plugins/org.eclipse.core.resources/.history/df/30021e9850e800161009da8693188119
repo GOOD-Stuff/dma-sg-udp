@@ -1,0 +1,40 @@
+#ifndef SRC_SPI_LOADER_H_
+#define SRC_SPI_LOADER_H_
+
+#include "ff.h"
+#include "xgpiops.h"
+#include "xparameters.h"
+#include "xspips.h"
+
+
+#define PIN_APROGB		54
+#define PIN_BPROGB		55
+#define PIN_ADONE		56
+#define PIN_BDONE		57
+#define PIN_AINITB		58
+#define PIN_BINITB		59
+
+#define PIN_DIRECTION	60
+
+/*Определения для выбора направления потока данных SPI*/
+#define DIRECTION_A		1
+#define DIRECTION_B		0
+/*Вход/выход*/
+#define OUTPUT 			1
+#define INPUT			0
+
+/**/
+#define BIT_A			0
+#define BIT_B			1
+
+u32 spi_set_direction(XGpioPs*, int);
+u32 spi_init(XSpiPs* SpiInstPtr);
+u32 fpga_load(void);
+u32 fpga_reset(XGpioPs*, int);
+u32 fpga_gpio_init(XGpioPs*);
+u32 sd_read(u32);
+
+u32 get_fpga_complete(XGpioPs*, int);
+
+
+#endif

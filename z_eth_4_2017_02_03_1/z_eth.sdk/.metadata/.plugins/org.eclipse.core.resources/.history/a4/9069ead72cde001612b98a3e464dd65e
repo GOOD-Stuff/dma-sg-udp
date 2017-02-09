@@ -1,0 +1,57 @@
+/*DMA_Opt*/
+#include "app_core.h"
+#include "AXIS_Counter_Direct.h"
+#include "drivers/xaxichecker.h"
+
+
+XAxiCounter_L Counter;
+XAxiChecker Checker;
+
+int flaq;
+
+/*Тестируем на этом проекте*/
+
+extern PacketStructure Pckt;
+#define XPAR_AXI_COUNTER_BASEADDRESS	0x43C00000
+
+
+int main()
+{
+    init_platform();
+    int SavedValue = 0;
+    xil_printf("\r\n\r\nPress key to start\r\n\r\n");
+    getchar();
+    APP_InitializationVariables();
+
+    XAxiDma DMA;
+    XScuGic INTC;
+    XTmrCtr TIMER;
+
+    XAxiCounterL_SetBaseAddress(&Counter, XPAR_AXI_COUNTER_BASEADDRESS);
+    XAxiCounterL_Reset(&Counter);
+
+    XAxiChecker_SetBaseAddress(&Checker, XPAR_AXIS_CHECKER_BASEADDR);
+    XAxiChecker_Reset(&Checker);
+
+
+    xstatus = TIMER_Initialization(&TIMER, 125000000, 0);
+    XAxiChecker_SetInterval(&Checker, 50000000);
+    xstatus = DMA_Initialization(&DMA);
+    xstatus = DMA_MM2S_StartWork(&DMA);
+    xstatus = INTC_SetupInterruptSystem(&INTC, &DMA, &TIMER);
+    XAxiCounterL_SetPacketSize(&Counter, 4096);
+    xstatus = DMA_S2MM_StartWork(&DMA);
+    XAxiCounterL_Start(&Counter);
+    XAxiChecker_Start(&Checker);
+    xstatus = TIMER_Start(&TIMER, 0);
+    xil_printf("CurrentPacketSize: %d\r\n", XAxiCounterL_GetPacketSize(&Counter));
+    while(1){
+
+    	if (flaq == 1){
+    		xil_printf("Err: %d", XAxiChecker_GetCurrentError(&Checker));
+    		flaq = 0;
+    	}
+    }
+    cleanup_platform();
+    return 0;
+}

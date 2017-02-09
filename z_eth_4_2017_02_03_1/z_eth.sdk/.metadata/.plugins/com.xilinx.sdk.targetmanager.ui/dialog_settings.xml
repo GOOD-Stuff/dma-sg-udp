@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Local" key="z_top_hw_platform_0-target"/>
+	<item value="Auto Detect" key="z_eth_top_hw_platform_0-device"/>
+	<item value="" key="z_eth_top_hw_platform_0-bmmFile"/>
+	<item value="z_top_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="z_top.bit" key="z_top_hw_platform_0-bitFile"/>
+	<item value="false" key="z_top_hw_platform_0-partial_bit"/>
+	<item value="Auto Detect" key="z_top_hw_platform_0-device"/>
+	<item value="Local" key="z_eth_top_hw_platform_0-target"/>
+	<item value="" key="z_top_hw_platform_0-bmmFile"/>
+	<item value="z_eth_top.bit" key="z_eth_top_hw_platform_0-bitFile"/>
+	<item value="false" key="z_eth_top_hw_platform_0-partial_bit"/>
+</section>

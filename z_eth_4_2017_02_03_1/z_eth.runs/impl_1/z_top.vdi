@@ -1,0 +1,740 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Wed Feb 08 14:56:44 2017
+# Process ID: 3500
+# Current directory: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/impl_1
+# Command line: vivado.exe -log z_top.vdi -applog -messageDb vivado.pb -mode batch -source z_top.tcl -notrace
+# Log file: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/impl_1/z_top.vdi
+# Journal file: C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source z_top.tcl -notrace
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/z_eth_axi_ethernet_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_0_0/z_eth_ila_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/ila_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_1_0/z_eth_ila_1_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/ila_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_processing_system7_0_0/z_eth_processing_system7_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_vio_0_0/z_eth_vio_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/vio_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xlconcat_0_0/z_eth_xlconcat_0_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/xlconcat_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_0/z_eth_xbar_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_2/z_eth_auto_pc_2.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_3/z_eth_auto_us_3.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_4/z_eth_auto_us_4.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_3/z_eth_xbar_3.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_0/z_eth_auto_pc_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/m00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_0/z_eth_auto_us_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_1/z_eth_auto_us_1.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_2/z_eth_auto_us_2.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_2/z_eth_xbar_2.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_1/z_eth_auto_pc_1.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_3/z_eth_auto_pc_3.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/bd_8314_eth_buf_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_buf'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/bd_8314_eth_mac_0.dcp' for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac'
+INFO: [Netlist 29-17] Analyzing 1034 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_processing_system7_0_0/z_eth_processing_system7_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_processing_system7_0_0/z_eth_processing_system7_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/bd_8314_eth_buf_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_buf/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/bd_8314_eth_buf_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_buf/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_125M/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1_board.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/rst_processing_system7_0_100M/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_vio_0_0/z_eth_vio_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/vio_0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_vio_0_0/z_eth_vio_0_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/vio_0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_0_0/ila_v6_1/constraints/ila.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_0/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_0_0/ila_v6_1/constraints/ila.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_0/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_1_0/ila_v6_1/constraints/ila.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_1/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_1_0/ila_v6_1/constraints/ila.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/ila_1/U0'
+Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/constrs_1/new/z_eth_top.xdc]
+Finished Parsing XDC File [C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/constrs_1/new/z_eth_top.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_processing_system7_0_0/z_eth_processing_system7_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/bd_8314_eth_buf_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/bd_8314_eth_mac_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/z_eth_axi_ethernet_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_0/z_eth_rst_processing_system7_0_125M_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_2/z_eth_xbar_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_3/z_eth_xbar_3.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_xbar_0/z_eth_xbar_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_rst_processing_system7_0_125M_1/z_eth_rst_processing_system7_0_125M_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_vio_0_0/z_eth_vio_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_0_0/z_eth_ila_0_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_ila_1_0/z_eth_ila_1_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_0/z_eth_auto_pc_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_0/z_eth_auto_us_0.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_1/z_eth_auto_us_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_2/z_eth_auto_us_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_1/z_eth_auto_pc_1.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_2/z_eth_auto_pc_2.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_3/z_eth_auto_us_3.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_4/z_eth_auto_us_4.dcp'
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'C:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_pc_3/z_eth_auto_pc_3.dcp'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/synth/bd_8314_eth_buf_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_buf/U0'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/synth/bd_8314_eth_buf_0.xdc:64]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/synth/bd_8314_eth_buf_0.xdc:64]
+all_fanin: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1082.234 ; gain = 482.406
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_0/synth/bd_8314_eth_buf_0.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_buf/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+INFO: [Vivado 12-3272] Current instance is the top level cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0' of design 'design_1' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0' of design 'design_1' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:30]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0' of design 'design_1' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:53]
+INFO: [Vivado 12-3272] Current instance is the top level cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0' of design 'design_1' [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:54]
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_dma_1/z_eth_axi_ethernet_0_dma_1_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0_dma/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_dma_0_0/z_eth_axi_dma_0_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_dma_0/U0'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_0/z_eth_auto_us_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_0/z_eth_auto_us_0_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s00_couplers/auto_us/inst'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_1/z_eth_auto_us_1_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_1/z_eth_auto_us_1_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s01_couplers/auto_us/inst'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_2/z_eth_auto_us_2_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_2/z_eth_auto_us_2_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_mem_intercon/s02_couplers/auto_us/inst'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_3/z_eth_auto_us_3_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_3/z_eth_auto_us_3_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s00_couplers/auto_us/inst'
+Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_4/z_eth_auto_us_4_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+Finished Parsing XDC File [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_auto_us_4/z_eth_auto_us_4_clocks.xdc] for cell 'z_eth_wrapper_inst/z_eth_i/axi_interconnect_0/s01_couplers/auto_us/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 326 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 200 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 13 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 2 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 22 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 88 instances
+
+link_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:37 . Memory (MB): peak = 1090.414 ; gain = 883.531
+CRITICAL WARNING: [Pfi 67-13] Hardware Handoff file z_eth_processing_system7_0_0.hwdef does not exist for instance z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.374 . Memory (MB): peak = 1090.414 ; gain = 0.000
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/AXIS_Counter/AXIS_Counter_Direct_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/AXIS_Checker/AXI4_Stream_Checker_1.1'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Projects/CustomIP/Cores/axis_counter_2'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.1/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:1.1 for cell dbg_hub_CV.
+INFO: [Chipscope 16-220] Re-using generated and synthesized IP, "xilinx.com:ip:xsdbm:1.1", from Vivado IP cache entry "da7eddc997b7225b".
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1113.672 ; gain = 0.000
+Phase 1 Generate And Synthesize Debug Cores | Checksum: f7c8b6af
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:27 . Memory (MB): peak = 1113.672 ; gain = 21.113
+Implement Debug Cores | Checksum: 1c4b85912
+
+Phase 2 Retarget
+INFO: [Opt 31-138] Pushed 4 inverter(s) to 10 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 2 Retarget | Checksum: 1ef264fe1
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1113.672 ; gain = 21.113
+
+Phase 3 Constant Propagation
+INFO: [Opt 31-138] Pushed 10 inverter(s) to 10 load pin(s).
+INFO: [Opt 31-10] Eliminated 832 cells.
+Phase 3 Constant Propagation | Checksum: 118261331
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:41 . Memory (MB): peak = 1113.672 ; gain = 21.113
+
+Phase 4 Sweep
+INFO: [Opt 31-12] Eliminated 2945 unconnected nets.
+INFO: [Opt 31-11] Eliminated 1145 unconnected cells.
+Phase 4 Sweep | Checksum: 249427b35
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:46 . Memory (MB): peak = 1113.672 ; gain = 21.113
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1113.672 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 249427b35
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 1113.672 ; gain = 21.113
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 12 BRAM(s) out of a total of 27 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 20 newly gated: 4 Total Ports: 54
+Ending PowerOpt Patch Enables Task | Checksum: 1c67b9ac0
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.234 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1c67b9ac0
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1453.695 ; gain = 340.023
+INFO: [Common 17-83] Releasing license: Implementation
+89 Infos, 3 Warnings, 1 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1453.695 ; gain = 363.281
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.765 . Memory (MB): peak = 1453.695 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/impl_1/z_top_drc_opted.rpt.
+INFO: [Chipscope 16-240] Debug cores have already been implemented
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.156 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+
+Phase 1.1.1 Pre-Place Cells
+Phase 1.1.1 Pre-Place Cells | Checksum: 851da06e
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1453.695 ; gain = 0.000
+WARNING: [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.
+WARNING: [Place 30-12] An IO Bus FIXED_IO_mio with more than one IO standard is found. Components associated with this bus are: 
+	FIXED_IO_mio[53] of IOStandard LVCMOS18
+	FIXED_IO_mio[52] of IOStandard LVCMOS18
+	FIXED_IO_mio[51] of IOStandard LVCMOS18
+	FIXED_IO_mio[50] of IOStandard LVCMOS18
+	FIXED_IO_mio[49] of IOStandard LVCMOS18
+	FIXED_IO_mio[48] of IOStandard LVCMOS18
+	FIXED_IO_mio[47] of IOStandard LVCMOS18
+	FIXED_IO_mio[46] of IOStandard LVCMOS18
+	FIXED_IO_mio[45] of IOStandard LVCMOS18
+	FIXED_IO_mio[44] of IOStandard LVCMOS18
+	FIXED_IO_mio[43] of IOStandard LVCMOS18
+	FIXED_IO_mio[42] of IOStandard LVCMOS18
+	FIXED_IO_mio[41] of IOStandard LVCMOS18
+	FIXED_IO_mio[40] of IOStandard LVCMOS18
+	FIXED_IO_mio[39] of IOStandard LVCMOS18
+	FIXED_IO_mio[38] of IOStandard LVCMOS18
+	FIXED_IO_mio[37] of IOStandard LVCMOS18
+	FIXED_IO_mio[36] of IOStandard LVCMOS18
+	FIXED_IO_mio[35] of IOStandard LVCMOS18
+	FIXED_IO_mio[34] of IOStandard LVCMOS18
+	FIXED_IO_mio[33] of IOStandard LVCMOS18
+	FIXED_IO_mio[32] of IOStandard LVCMOS18
+	FIXED_IO_mio[31] of IOStandard LVCMOS33
+	FIXED_IO_mio[30] of IOStandard LVCMOS33
+	FIXED_IO_mio[29] of IOStandard LVCMOS18
+	FIXED_IO_mio[28] of IOStandard LVCMOS18
+	FIXED_IO_mio[27] of IOStandard LVCMOS33
+	FIXED_IO_mio[26] of IOStandard LVCMOS33
+	FIXED_IO_mio[25] of IOStandard LVCMOS18
+	FIXED_IO_mio[24] of IOStandard LVCMOS18
+	FIXED_IO_mio[23] of IOStandard LVCMOS18
+	FIXED_IO_mio[22] of IOStandard LVCMOS18
+	FIXED_IO_mio[21] of IOStandard LVCMOS33
+	FIXED_IO_mio[20] of IOStandard LVCMOS33
+	FIXED_IO_mio[19] of IOStandard LVCMOS33
+	FIXED_IO_mio[18] of IOStandard LVCMOS33
+	FIXED_IO_mio[17] of IOStandard LVCMOS33
+	FIXED_IO_mio[16] of IOStandard LVCMOS33
+	FIXED_IO_mio[15] of IOStandard LVCMOS18
+	FIXED_IO_mio[14] of IOStandard LVCMOS18
+	FIXED_IO_mio[13] of IOStandard LVCMOS18
+	FIXED_IO_mio[12] of IOStandard LVCMOS18
+	FIXED_IO_mio[11] of IOStandard LVCMOS18
+	FIXED_IO_mio[10] of IOStandard LVCMOS18
+	FIXED_IO_mio[9] of IOStandard LVCMOS18
+	FIXED_IO_mio[8] of IOStandard LVCMOS18
+	FIXED_IO_mio[7] of IOStandard LVCMOS18
+	FIXED_IO_mio[6] of IOStandard LVCMOS33
+	FIXED_IO_mio[5] of IOStandard LVCMOS33
+	FIXED_IO_mio[4] of IOStandard LVCMOS33
+	FIXED_IO_mio[3] of IOStandard LVCMOS33
+	FIXED_IO_mio[2] of IOStandard LVCMOS33
+	FIXED_IO_mio[1] of IOStandard LVCMOS33
+	FIXED_IO_mio[0] of IOStandard LVCMOS18
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1.1.2 IO and Clk Clean Up
+Phase 1.1.2 IO and Clk Clean Up | Checksum: 851da06e
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 1.1.3 Implementation Feasibility check On IDelay
+Phase 1.1.3 Implementation Feasibility check On IDelay | Checksum: 851da06e
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 1.1.4 Commit IO Placement
+Phase 1.1.4 Commit IO Placement | Checksum: dd7a2d60
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10b0120ad
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 1.2 Build Placer Netlist Model
+
+Phase 1.2.1 Place Init Design
+
+Phase 1.2.1.1 Init Lut Pin Assignment
+Phase 1.2.1.1 Init Lut Pin Assignment | Checksum: 1ad251868
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 1.2.1 Place Init Design | Checksum: 1e2a2996a
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 1.2 Build Placer Netlist Model | Checksum: 1e2a2996a
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 1.3 Constrain Clocks/Macros
+Phase 1.3 Constrain Clocks/Macros | Checksum: 1e2a2996a
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:26 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 1e2a2996a
+
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:26 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 13e18ebad
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:46 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 13e18ebad
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:46 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 19e544af6
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:53 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: df7c1ba9
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:53 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.4 updateClock Trees: DP
+Phase 3.4 updateClock Trees: DP | Checksum: df7c1ba9
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:53 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 11a637f0e
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:55 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 13e401fb7
+
+Time (s): cpu = 00:01:09 ; elapsed = 00:00:55 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 12ce90829
+
+Time (s): cpu = 00:01:34 ; elapsed = 00:01:34 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 6472b6c5
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:35 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 6472b6c5
+
+Time (s): cpu = 00:01:35 ; elapsed = 00:01:35 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 13d43ee83
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:38 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 13d43ee83
+
+Time (s): cpu = 00:01:40 ; elapsed = 00:01:39 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0_rgmii_rx_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [c:/Projects/z_eth_4_2017_02_03_1/z_eth.srcs/sources_1/bd/z_eth/ip/z_eth_axi_ethernet_0_0/bd_0/ip/ip_1/synth/bd_8314_eth_mac_0_clocks.xdc:29]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 updateClock Trees: PCOPT
+Phase 4.1.1 updateClock Trees: PCOPT | Checksum: c016c2ed
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:01:45 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.1.2 Post Placement Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-0.095. For the most accurate timing information please run report_timing.
+Phase 4.1.2 Post Placement Optimization | Checksum: 1a0c09a7b
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:02:13 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1a0c09a7b
+
+Time (s): cpu = 00:02:16 ; elapsed = 00:02:13 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.2 Sweep Clock Roots: Post-Placement
+Phase 4.2 Sweep Clock Roots: Post-Placement | Checksum: 1a0c09a7b
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:02:13 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.3 Post Placement Cleanup
+Phase 4.3 Post Placement Cleanup | Checksum: 1a0c09a7b
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:02:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.4 Placer Reporting
+Phase 4.4 Placer Reporting | Checksum: 1a0c09a7b
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:02:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.5 Final Placement Cleanup
+Phase 4.5 Final Placement Cleanup | Checksum: 1b9cc781b
+
+Time (s): cpu = 00:02:17 ; elapsed = 00:02:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1b9cc781b
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:02:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Ending Placer Task | Checksum: 14eb7ffe5
+
+Time (s): cpu = 00:02:18 ; elapsed = 00:02:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+109 Infos, 5 Warnings, 1 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:22 ; elapsed = 00:02:17 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1453.695 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1453.695 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1453.695 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.359 . Memory (MB): peak = 1453.695 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.109 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC 23-20] Rule violation (PLIO-7) Placement Constraints Check for IO constraints - An IO Bus FIXED_IO_mio[53:0] with more than one IO standard is found. Components associated with this bus are: LVCMOS33 (FIXED_IO_mio[31], FIXED_IO_mio[30], FIXED_IO_mio[27], FIXED_IO_mio[26], FIXED_IO_mio[21], FIXED_IO_mio[20], FIXED_IO_mio[19], FIXED_IO_mio[18], FIXED_IO_mio[17], FIXED_IO_mio[16], FIXED_IO_mio[6], FIXED_IO_mio[5], FIXED_IO_mio[4], FIXED_IO_mio[3], FIXED_IO_mio[2] (the first 15 of 16 listed)); LVCMOS18 (FIXED_IO_mio[53], FIXED_IO_mio[52], FIXED_IO_mio[51], FIXED_IO_mio[50], FIXED_IO_mio[49], FIXED_IO_mio[48], FIXED_IO_mio[47], FIXED_IO_mio[46], FIXED_IO_mio[45], FIXED_IO_mio[44], FIXED_IO_mio[43], FIXED_IO_mio[42], FIXED_IO_mio[41], FIXED_IO_mio[40], FIXED_IO_mio[39] (the first 15 of 38 listed)); 
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: e98e9f25 ConstDB: 0 ShapeSum: 652960c0 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 9cdc5da0
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 9cdc5da0
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:15 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 9cdc5da0
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 9cdc5da0
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 1453.695 ; gain = 0.000
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: d0f2c2b5
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.048  | TNS=0.000  | WHS=-0.471 | THS=-426.732|
+
+Phase 2 Router Initialization | Checksum: 1625e2b2b
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:28 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 2119b6d9b
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:32 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 3472
+ Number of Nodes with overlaps = 258
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+
+Phase 4.1.1 Update Timing
+Phase 4.1.1 Update Timing | Checksum: 241bc3964
+
+Time (s): cpu = 00:01:10 ; elapsed = 00:00:46 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.423 | TNS=-15.014| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.1.2 GlobIterForTiming
+
+Phase 4.1.2.1 Update Timing
+Phase 4.1.2.1 Update Timing | Checksum: 23779c99c
+
+Time (s): cpu = 00:01:11 ; elapsed = 00:00:46 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.1.2.2 Fast Budgeting
+Phase 4.1.2.2 Fast Budgeting | Checksum: 22691599e
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:48 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4.1.2 GlobIterForTiming | Checksum: 230ff4217
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4.1 Global Iteration 0 | Checksum: 230ff4217
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 48
+ Number of Nodes with overlaps = 19
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.2.1 Update Timing
+Phase 4.2.1 Update Timing | Checksum: 188423d6d
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:53 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.374 | TNS=-16.089| WHS=N/A    | THS=N/A    |
+
+
+Phase 4.2.2 GlobIterForTiming
+
+Phase 4.2.2.1 Update Timing
+Phase 4.2.2.1 Update Timing | Checksum: 1f276c74f
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:54 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.2.2.2 Fast Budgeting
+Phase 4.2.2.2 Fast Budgeting | Checksum: 15c978899
+
+Time (s): cpu = 00:01:21 ; elapsed = 00:00:56 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4.2.2 GlobIterForTiming | Checksum: 151108cae
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:56 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4.2 Global Iteration 1 | Checksum: 151108cae
+
+Time (s): cpu = 00:01:22 ; elapsed = 00:00:56 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 4.3 Global Iteration 2
+ Number of Nodes with overlaps = 37
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+
+Phase 4.3.1 Update Timing
+Phase 4.3.1 Update Timing | Checksum: 1e153a2cd
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:59 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.369 | TNS=-15.153| WHS=N/A    | THS=N/A    |
+
+Phase 4.3 Global Iteration 2 | Checksum: 2219c5197
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:59 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 4 Rip-up And Reroute | Checksum: 2219c5197
+
+Time (s): cpu = 00:01:25 ; elapsed = 00:00:59 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 179ecf5b8
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:01:00 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.254 | TNS=-5.102 | WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1295ff89d
+
+Time (s): cpu = 00:01:27 ; elapsed = 00:01:01 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1295ff89d
+
+Time (s): cpu = 00:01:28 ; elapsed = 00:01:01 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 5 Delay and Skew Optimization | Checksum: 1295ff89d
+
+Time (s): cpu = 00:01:28 ; elapsed = 00:01:01 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: d95d2ecd
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:01:02 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-0.193 | TNS=-2.969 | WHS=0.014  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1955897ba
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:01:02 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Phase 6 Post Hold Fix | Checksum: 1955897ba
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:01:02 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 20.8623 %
+  Global Horizontal Routing Utilization  = 24.54 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 72.0721%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 68.4685%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 66.1765%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 72.0588%, No Congested Regions.
+Phase 7 Route finalize | Checksum: eb6095e5
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:01:02 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: eb6095e5
+
+Time (s): cpu = 00:01:30 ; elapsed = 00:01:03 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1814a5928
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:05 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-0.193 | TNS=-2.969 | WHS=0.014  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 1814a5928
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:05 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:01:32 ; elapsed = 00:01:05 . Memory (MB): peak = 1453.695 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+123 Infos, 7 Warnings, 1 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:36 ; elapsed = 00:01:07 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.695 ; gain = 0.000
+write_checkpoint: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Projects/z_eth_4_2017_02_03_1/z_eth.runs/impl_1/z_top_drc_routed.rpt.
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1453.695 ; gain = 0.000
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+report_timing_summary: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1453.695 ; gain = 0.000
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./z_top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+write_bitstream: Time (s): cpu = 00:00:29 ; elapsed = 00:00:25 . Memory (MB): peak = 1735.551 ; gain = 281.855
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 08 15:03:07 2017...

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.eclipse.cdt.ui.occurrenceHighlighting=false
+org.eclipse.cdt.ui.occurrenceIndication=true
+org.eclipse.cdt.ui.occurrenceTextStyle=BOX
+overviewRuler_migration=migrated_3.1
+spellingEnabled=false
+spellingEngine=org.eclipse.jdt.internal.ui.text.spelling.DefaultSpellingEngine

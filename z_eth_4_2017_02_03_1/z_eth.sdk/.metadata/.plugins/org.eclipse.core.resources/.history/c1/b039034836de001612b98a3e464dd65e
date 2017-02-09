@@ -1,0 +1,934 @@
+#include "app_core.h"
+
+
+PacketStructure Pckt;
+PacketStructure TxPckt;
+int SavedValue = 0;
+extern int flaq;
+
+int CurrentRxSpeed = 0;
+int CurrentTxSpeed = 0;
+
+volatile int SError;				// Errors in soft part
+volatile int HError;				// Errors in Hardware part
+
+
+/*Инициализация глобальных переменных*/
+void APP_InitializationVariables(){
+	xstatus 			= 0;
+	CurrentRxSpeed		= 0;
+	CurrentTxSpeed 		= 0;
+	SError 				= 0;
+	SavedValue 			= 0;
+	HError				= 0;
+	flaq = 0;
+
+	Pckt.PacketSize 	= 0;
+	Pckt.StartAddress 	= 0;
+	Pckt.isCompleted 	= 0;
+}
+
+
+/*
+ * Возвращает XST Success, если в текущем дескрипторе находится начало пакета
+ * иначе - XST_FAILURE*/
+u32 Parser_GetSof(u32 statusRegister){
+	if (statusRegister & SR_SOF_MASK){
+		return XST_SUCCESS;
+	}
+	else{
+		return XST_FAILURE;
+	}
+}
+
+
+
+/*
+ * Если дескриптор завершен, но биты ни начала ни конца
+ * не взведены - то это середина пакета. Это справедливо, если
+ * пакет имеет размер больше чем <Размер дескриптора*2>
+ * */
+u32 Parser_GetIof(u32 statusRegister){
+	if ((statusRegister & SR_COMPLETE_MASK) && (Parser_GetEof(statusRegister) == XST_FAILURE) && (Parser_GetSof(statusRegister) == XST_FAILURE)){
+		return XST_SUCCESS;
+	}else{
+		return XST_FAILURE;
+	}
+}
+
+
+
+/*
+ * Возвращает XST_SUCCESS если в текущем дескрипторе находится конец пакета,
+ * Иначе - XST_FAILURE
+ * */
+u32 Parser_GetEof(u32 statusRegister){
+	if (statusRegister & SR_EOF_MASK){
+		return XST_SUCCESS;
+	}
+	else{
+		return XST_FAILURE;
+	}
+}
+
+
+
+/*
+ * Возвращает XST_Success если текущий дескриптор завершен
+ * иначе - XST_FAILURE
+ * */
+u32 Parser_GetComplete(u32 statusRegister){
+	if (statusRegister & SR_COMPLETE_MASK){
+		return XST_SUCCESS;
+	}
+	else{
+		return XST_FAILURE;
+	}
+}
+
+
+
+/*
+ * Возвращает XST_SUCCESS, если есть ошибка в дескрипторе,
+ * иначе XST_FAILURE
+ * */
+u32 Parser_isErrorDescriptor(u32 statusRegister){
+	if ((statusRegister & SR_INT_ERROR_MASK) ||
+			(statusRegister & SR_SLV_ERROR_MASK) ||
+			(statusRegister & SR_DEC_ERROR_MASK)){
+		return XST_FAILURE;
+	}
+	else{
+		return XST_SUCCESS;
+	}
+}
+
+
+
+/*
+ * извлекает размер переданных данных через дескриптор
+ * */
+u32 Parser_ExtractTransferredBytes(u32 statusRegister){
+	return statusRegister & SR_TRANSFERRED_BYTES_MASK;
+}
+
+
+
+/*
+ * извлекает биты статуса из статусного регистра дескриптора
+ * */
+u32 Parser_ExtractStatus(u32 statusRegister){
+	return statusRegister & SR_STATUS_PART_MASK;
+}
+
+
+/*u32 Parser_DoCorruption(){
+	u32* Address = RX_BUFFER_BASE;
+	Address = Address + 10;
+	(*Address) = 1111;
+	return XST_SUCCESS;
+}*/
+
+u32 Parser_CheckingData(PacketStructure pkt){
+
+	//u32* Packet = (u32*)pkt.StartAddress;
+
+	u32* Packet = (u32*)pkt.StartAddress;
+	u32 LastIndex = (pkt.PacketSize/4)-1;
+	Xil_DCacheInvalidateRange(Packet, pkt.PacketSize/4-1);
+
+	int CurrentValue 	= 0;
+	int PrevValue 		= 0;
+	int Result			= 0;
+	int index = 0;
+	int Error = 0;
+	for (index = 1; index < LastIndex; index++){
+		CurrentValue = Packet[index];
+		PrevValue = Packet[index-1];
+		Result = CurrentValue - PrevValue;
+		if (Result != 1){
+			Error++;
+			xil_printf("C: %d \t P: %d\r\n", CurrentValue, PrevValue);
+		}
+	}
+	return Error;
+}
+
+u32 Parser_CheckingBoundaryData(u32 savedValue, PacketStructure pkt){
+	u32* Packet = (u32*)pkt.StartAddress;
+	int LastIndex = (pkt.PacketSize/4)-1;
+	Xil_DCacheInvalidateRange(Packet, LastIndex);
+	int First = Packet[0];
+	int Result = First - savedValue;
+	if (Result != 1){
+		SError += 1;
+	}
+	u32 Prev = Packet[LastIndex];
+	return Prev;
+
+}
+
+u32 Parser_GetDifferenceRxTx(PacketStructure Rx, PacketStructure Tx){
+	int Result = Rx.PacketSize - Tx.PacketSize;
+	return Result;
+}
+
+
+
+
+/*
+ * Main Function of initialization DMA in SG mode with initialization of
+ * Rx and Tx Channels
+ * */
+u32 DMA_Initialization(XAxiDma* DmaInstPtr){
+#if DEBUG
+	xil_printf("****************INITIALIZATION DMA****************\r\n");
+#endif
+	XAxiDma_Config* ConfigurationDMA;
+	xil_printf("DMA_Configure");
+	xstatus = DMA_Configure(DmaInstPtr, ConfigurationDMA);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tERROR: DMA Initialization failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf("\t\t\tComplete\r\n");
+
+
+	xil_printf("DMA RxChnnl");
+
+	xstatus = DMA_RxInitialization(DmaInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tERROR: DMA RX Channel Initialization failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf("\t\t\tComplete\r\n");
+
+	xil_printf("DMA TxChnnl");
+	xstatus = DMA_TxInitialization(DmaInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tERROR: DMA TX Channel Initialization failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf("\t\t\t\tComplete\r\n");
+
+}
+
+
+/*
+ * КОнфигурация DMA
+ * */
+u32 DMA_Configure(XAxiDma* DmaInstPtr, XAxiDma_Config* DmaConfigInstPtr){
+	xil_printf(".");
+
+	DmaConfigInstPtr = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	if (!DmaConfigInstPtr){
+		xil_printf("\t\tConfiguration not found\r\n");
+	}
+	xil_printf(".");
+
+	xstatus = XAxiDma_CfgInitialize(DmaInstPtr, DmaConfigInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tInitialization DMA with current cofiguration failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	if (!XAxiDma_HasSg(DmaInstPtr)){
+		xil_printf("\t\tDMA configured is non SG-Mode\r\n");
+	}
+	xil_printf(".");
+
+	XAxiDma_IntrDisable(DmaInstPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(DmaInstPtr, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+	xil_printf(".");
+
+	return XST_SUCCESS;
+}
+
+
+
+/*
+ * Конфигурация rx канала ДМА
+ * */
+u32 DMA_RxInitialization(XAxiDma* DmaInstPtr){
+	int CountBD			=		0;
+	int CountFreeBD		=		0;
+	int Index 			= 		0;
+
+	XAxiDma_BdRing* RxRing = XAxiDma_GetRxRing(DmaInstPtr);
+	XAxiDma_Bd*	CurrentBD;
+	XAxiDma_Bd*	PointerBD;
+	XAxiDma_Bd*	TemplateBD;
+
+	u32 rxBufferPointer;
+	XAxiDma_BdRingIntDisable(RxRing, XAXIDMA_IRQ_ALL_MASK);
+
+	CountBD = XAxiDma_BdRingCntCalc(MIN_ALIGN_BD, RX_BD_HIGHADDR - RX_BD_BASEADDR + 1);
+
+	xstatus = XAxiDma_BdRingCreate(RxRing, RX_BD_BASEADDR, RX_BD_BASEADDR, MIN_ALIGN_BD, CountBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tCould not Create RxRing of BDs\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	XAxiDma_BdClear(TemplateBD);
+
+	xstatus = XAxiDma_BdRingClone(RxRing, TemplateBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tAllocating S2MM BDs Failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	CountFreeBD = RxRing->FreeCnt;
+
+	xstatus = XAxiDma_BdRingAlloc(RxRing, CountFreeBD, &PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tFailed to allocate RxRing in memory\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+	CurrentBD = PointerBD;
+	rxBufferPointer = RX_BUFFER_BASE;
+
+	for (Index = 0; Index < CountFreeBD; Index++){
+
+		xstatus = XAxiDma_BdSetBufAddr(CurrentBD, rxBufferPointer);
+		if (xstatus != XST_SUCCESS){
+			xil_printf("\t\tFailed to set current RxBufferPointer for current descriptor\r\n");
+			xil_printf("\t\tA problem in %d iteration, rxBufferPointer is 0x%08x\r\n", Index, rxBufferPointer);
+			return XST_FAILURE;
+		}
+
+		xstatus = XAxiDma_BdSetLength(CurrentBD, BYTES_PER_DESCRIPTOR, RxRing->MaxTransferLen);
+		if (xstatus != XST_SUCCESS){
+			xil_printf("Failed to set length for current BD, Iteration: %d", Index);
+			return XST_FAILURE;
+		}
+
+		rxBufferPointer += BYTES_PER_DESCRIPTOR;
+
+		CurrentBD = XAxiDma_BdRingNext(RxRing, CurrentBD);
+	}
+	xil_printf(".");
+
+
+	xstatus = XAxiDma_BdRingToHw(RxRing, CountFreeBD, PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tFailed to enqueue Rx_BDRing to HW processing\r\n");
+		return XST_FAILURE;
+	}
+
+	xil_printf(".");
+	XAxiDma_BdRingIntEnable(RxRing, XAXIDMA_IRQ_ALL_MASK);
+
+	return XST_SUCCESS;
+
+}
+
+
+
+/*
+ * Initialization TxRing for MM2S channel
+ * */
+u32 DMA_TxInitialization(XAxiDma* DmaInstPtr){
+
+	int 				CountBD 	= 0;
+	XAxiDma_BdRing* 	TxRing 		= XAxiDma_GetTxRing(DmaInstPtr);
+	XAxiDma_Bd*			TemplateBD; 		//Check this - Maybe not pointer???
+	XAxiDma_BdRingIntDisable(TxRing, XAXIDMA_IRQ_ALL_MASK);
+
+	CountBD = XAxiDma_BdRingCntCalc(MIN_ALIGN_BD, TX_BD_HIGHADDR - TX_BD_BASEADDR + 1);
+
+	xstatus = XAxiDma_BdRingCreate(TxRing, TX_BD_BASEADDR, TX_BD_BASEADDR, MIN_ALIGN_BD, CountBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tFailed to create TxRing\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	XAxiDma_BdClear(TemplateBD);
+	xstatus = XAxiDma_BdRingClone(TxRing, TemplateBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\t\tTxDescriptors allocating failed\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+	XAxiDma_BdRingIntEnable(TxRing, XAXIDMA_IRQ_ALL_MASK);
+	return XST_SUCCESS;
+}
+
+
+
+/*
+ * Начало работы канала приема
+ * */
+u32 DMA_S2MM_StartWork(XAxiDma* DmaInstPtr){
+	XAxiDma_BdRing* RxRing = XAxiDma_GetRxRing(DmaInstPtr);
+	xstatus = XAxiDma_BdRingStart(RxRing);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tRxRing start to work failed\r\n");
+		return XST_FAILURE;
+	}
+	else{
+		xil_printf("Start RxRing\t\t\t\tComplete\r\n");
+	}
+	return XST_SUCCESS;
+
+}
+
+
+
+/*
+ * Начало работы канала передачи
+ * */
+u32 DMA_MM2S_StartWork(XAxiDma* DmaInstPtr){
+
+	XAxiDma_BdRing* TxRing = XAxiDma_GetTxRing(DmaInstPtr);
+	xstatus = XAxiDma_BdRingStart(TxRing);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tTxRing start to work failed\r\n");
+	}else{
+		xil_printf("Start TxRing\t\t\t\tComplete\r\n");
+	}
+	return XST_SUCCESS;
+}
+
+
+
+/*
+ * Сброс DMA
+ * */
+u32 DMA_Reset(XAxiDma* DmaInstPtr){
+
+	XAxiDma_Reset(DmaInstPtr);
+	int TimeOut 	= 	0;
+	TimeOut = RESET_TIMEOUT_COUNTER;
+
+	while(TimeOut){
+		if (XAxiDma_ResetIsDone(DmaInstPtr)){
+			break;
+		}
+		TimeOut -= 1;
+	}
+	xil_printf("DMA DEVICE RESETTED!\r\n");
+	return XST_SUCCESS;
+}
+
+
+
+
+
+
+
+
+/*
+ * Инициализация AXI таймера. так как в блоке AXI Timer
+ * есть два независимых друг от друга таймера то мы должны
+ * непосредственно задать ИД инициализируемого таймера
+ * Входные параметры:
+ * - TiemrInstPtr - казатель на таймер
+ * - timerLimit - предел счета таймера на вызов прерывания
+ * - TimerDevice - ид таймера(по умолчанию - 0)
+ * */
+u32 TIMER_Initialization(XTmrCtr* TimerInstPtr, u32 timerLimit, u8 TimerDevice){
+	xil_printf("Timer initialization: \t\t");
+
+	xstatus = XTmrCtr_Initialize(TimerInstPtr, XPAR_AXI_TIMER_0_DEVICE_ID);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\tAXI TIMER: Initialization failed\r\n");
+		return XST_FAILURE;
+	}
+	XTmrCtr_SetHandler(TimerInstPtr, INTC_TimerIntrHandler, TimerInstPtr);
+	XTmrCtr_SetResetValue(TimerInstPtr, TimerDevice, timerLimit);
+	XTmrCtr_SetOptions(TimerInstPtr, XPAR_AXI_TIMER_0_DEVICE_ID, TIMER_OPTIONS);
+	xil_printf("\tcomplete\r\n");
+	return XST_SUCCESS;
+}
+
+
+
+/*
+ *Получить лимит счета таймера
+ * */
+u32 TIMER_GetTimerLimit(XTmrCtr* TimerInstPtr, u8 TimerDevice){
+	return XTmrCtr_GetValue(TimerInstPtr, TimerDevice);
+}
+
+
+
+/*
+ * прерывание по AXI TIMER
+ * алгоритм обработки заключается чтобы выполнить какое либо действие
+ * и после этого перезапустить таймер
+ * */
+void INTC_TimerIntrHandler(void *CallBack, u8 TimerCounterNumber){
+	/*EVENT WHEN TIMER TICKED*/
+	XTmrCtr *timerinst = (XTmrCtr*)CallBack;
+	xil_printf("Rx: %d, Tx: %d\r\n", CurrentRxSpeed, CurrentTxSpeed);
+	CurrentRxSpeed = 0;
+	CurrentTxSpeed = 0;
+	flaq = 1;
+	XTmrCtr_Stop(timerinst, 0);
+	XTmrCtr_Reset(timerinst, 0);
+	XTmrCtr_Start(timerinst, 0);
+	return;
+}
+
+
+
+/*
+ *Запуск таймера
+ * */
+u32 TIMER_Start(XTmrCtr* TimerInstPtr, u8 TimerDevice){
+	XTmrCtr_Start(TimerInstPtr, TimerDevice);
+}
+
+
+/*
+ * Инициализация контроллера прерываний*
+ */
+u32 INTC_SetupInterruptSystem(XScuGic *IntcInstPtr, XAxiDma* DmaInstPtr, XTmrCtr* TimerInstPtr){
+	xil_printf("IntrCtrtlr initialization");
+	XScuGic_Config *IntcConfig;
+
+	IntcConfig = XScuGic_LookupConfig(XPAR_SCUGIC_SINGLE_DEVICE_ID);
+	if (NULL == IntcConfig){
+		xil_printf("\r\n\tConfig not found\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	xstatus = XScuGic_CfgInitialize(IntcInstPtr, IntcConfig, IntcConfig->CpuBaseAddress);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\n\tConfig initialization FAILED\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	XScuGic_SetPriorityTriggerType(IntcInstPtr, TIMER_INTR_ID, 0xA8, 0x3);
+	xil_printf(".");
+
+	XScuGic_SetPriorityTriggerType(IntcInstPtr, RX_INTR_ID, 0xA0, 0x3);
+	xil_printf(".");
+
+	XScuGic_SetPriorityTriggerType(IntcInstPtr, TX_INTR_ID, 0xA0, 0x3);
+	xil_printf(".");
+
+	xstatus = XScuGic_Connect(IntcInstPtr, TIMER_INTR_ID, (Xil_InterruptHandler)INTC_TimerIntrHandler, TimerInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed To CONNECT TimerInterrupt_ID\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	xstatus = XScuGic_Connect(IntcInstPtr, RX_INTR_ID, 	(Xil_InterruptHandler)INTC_RxIntrHandler, DmaInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed To CONNECT RxInterrupt_ID\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	xstatus = XScuGic_Connect(IntcInstPtr, TX_INTR_ID, (Xil_InterruptHandler)INTC_TxIntrHandler, DmaInstPtr);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed To CONNECT TxInterrupt_ID\r\n");
+		return XST_FAILURE;
+	}
+	xil_printf(".");
+
+	XScuGic_Enable(IntcInstPtr, RX_INTR_ID);
+	xil_printf(".");
+
+	XScuGic_Enable(IntcInstPtr, TX_INTR_ID);
+	xil_printf(".");
+
+	XScuGic_Enable(IntcInstPtr, TIMER_INTR_ID);
+	xil_printf(".");
+
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT, (Xil_ExceptionHandler)XScuGic_InterruptHandler, IntcInstPtr);
+	xil_printf(".");
+
+	Xil_ExceptionEnable();
+
+	xil_printf("\tComplete\r\n");
+
+	return XST_SUCCESS;
+}
+
+
+/*
+ * Обработчик прерывания, которое возникает когда мы передали пакет
+ * По нему необходимо очистить обработанные дескрипторы для дальнейшего использования
+ * Передаваемым параметром будет указатель на ДМА
+ * */
+void INTC_TxIntrHandler(void* Callback){
+	/*Распарсить данные переданного пакета: количество байт, например*/
+	XAxiDma *AxiDmaPtr = (XAxiDma*)Callback;
+	XAxiDma_BdRing* TxRing = XAxiDma_GetTxRing(AxiDmaPtr);
+
+	u32 IRQ;
+
+	IRQ = XAxiDma_BdRingGetIrq(TxRing);
+	XAxiDma_BdRingAckIrq(TxRing, IRQ);
+
+	if (!(IRQ & XAXIDMA_IRQ_ALL_MASK)){
+		return;
+	}
+
+	if ((IRQ & XAXIDMA_IRQ_ERROR_MASK)){
+		xil_printf("\r\n\r\nError with DMA Device\r\n");
+		xstatus = DMA_Reset(AxiDmaPtr);
+		if (xstatus == XST_SUCCESS){
+			return;
+		}
+	}
+
+	if ((IRQ & (XAXIDMA_IRQ_DELAY_MASK | XAXIDMA_IRQ_IOC_MASK))){
+		TxCallBack(AxiDmaPtr);
+	}
+
+
+}
+
+/*
+ * Обработчик прерывания, которое возникает когда мы приняли пакет. В нем нам необходимо произвести
+ * проверку на целостность(актуально для данной задачи, но не для практического применения. Также
+ * необходимо организовать очистку обработанных дескрипторов, высчитать размер принятого пакета.
+ * Стоит отметить, что так как мы заранее не знаем, какого размера придет пакет, и где он будет находиться
+ * в памяти, то придется распарсивать данные в статусном регистре каждого дескриптора, так как там содержится
+ * такая информация, как количество переданных байт, начальные адреса, наличие ошибки.
+ * Входным параметром является указатель на DMA
+ * */
+void INTC_RxIntrHandler(void* Callback){
+	XAxiDma* AxiDmaPtr 		= (XAxiDma*)Callback;
+	XAxiDma_BdRing* RxRing 	= XAxiDma_GetRxRing(AxiDmaPtr);
+
+	u32 IRQ;
+	IRQ = XAxiDma_BdRingGetIrq(RxRing);
+
+	XAxiDma_BdRingAckIrq(RxRing, IRQ);
+
+	if (!(IRQ & XAXIDMA_IRQ_ALL_MASK)){
+		return;
+	}
+
+	if ((IRQ & XAXIDMA_IRQ_ERROR_MASK)){
+		xil_printf("\r\n\r\nError with DMA Device\r\n");
+		xstatus = DMA_Reset(AxiDmaPtr);
+		if (xstatus == XST_SUCCESS){
+			return;
+		}
+	}
+
+	if ((IRQ & (XAXIDMA_IRQ_DELAY_MASK | XAXIDMA_IRQ_IOC_MASK))){
+		RxCallBack(AxiDmaPtr);
+	}
+}
+
+
+
+void RxCallBack(XAxiDma *AxiDmaPtr){
+	int ProcessedBDs		=	0;
+	int Index				=	0;
+	int FreeCntBD			=	0;
+	u32 BufferAddress 		=	0;
+	u32 StatusRegister		= 	0;
+	u32 Status				=	0;
+	u32 TransferredBytes	=	0;
+
+	XAxiDma_Bd* PointerBD;
+	XAxiDma_Bd* CurrentBD;
+
+	XAxiDma_BdRing* RxRing = XAxiDma_GetRxRing(AxiDmaPtr);
+
+	XAxiDma_BdRingIntDisable(RxRing, XAXIDMA_IRQ_ALL_MASK);
+	ProcessedBDs = XAxiDma_BdRingFromHw(RxRing, XAXIDMA_ALL_BDS, &PointerBD);
+	CurrentBD = PointerBD;
+
+	for (Index = 0; Index < ProcessedBDs; Index++){
+		BufferAddress 	 = XAxiDma_BdRead(CurrentBD, S2MM_BUFFER_ADDRESS_OFFSET);
+		StatusRegister 	 = XAxiDma_BdRead(CurrentBD, S2MM_STATUSREGISTER_OFFSET);
+		Status 			 = Parser_ExtractStatus(StatusRegister);
+		TransferredBytes = Parser_ExtractTransferredBytes(StatusRegister);
+		Parser_ExtractPacketData(Status, TransferredBytes, BufferAddress);
+		CurrentBD = XAxiDma_BdRingNext(RxRing, CurrentBD);
+	}
+
+
+#if CHECK_ALL_VALUES
+	SError += Parser_CheckingData(Pckt);
+#endif
+	//SavedValue = Parser_CheckingBoundaryData(SavedValue, Pckt);
+	//InitializationTransfer_MM2S(Pckt, AxiDmaPtr);
+
+#if INFINITE
+	/*Free BDs for next Transfering data*/
+	xstatus = XAxiDma_BdRingFree(RxRing, ProcessedBDs, PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed to Free RxRing\r\n");
+	}
+
+	FreeCntBD = RxRing->FreeCnt;
+	xstatus = XAxiDma_BdRingAlloc(RxRing, FreeCntBD, &PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed to Allocate RxRing's BDs\r\n");
+	}
+
+	xstatus = XAxiDma_BdRingToHw(RxRing, FreeCntBD, PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed To Enqueue to Hardware processing BDs\r\n");
+	}
+#endif
+
+	XAxiDma_BdRingIntEnable(RxRing, XAXIDMA_IRQ_ALL_MASK);
+}
+
+
+/*
+ * Функция извлекает данные пакета.
+ *
+ * */
+void Parser_ExtractPacketData(u32 status, u32 transferredBytes, u32 bufferAddress){
+
+	xstatus = Parser_isErrorDescriptor(status);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nError in descriptor\r\n");
+	}
+
+	xstatus = Parser_GetComplete(status);
+	if (xstatus == XST_FAILURE){
+		xil_printf("\r\nUncompleted descriptor\r\n");
+	}
+
+	xstatus = Parser_GetSof(status);
+	if (xstatus == XST_SUCCESS){
+		Pckt.StartAddress = bufferAddress;
+		Pckt.PacketSize = transferredBytes;
+	}
+
+	xstatus = Parser_GetIof(status);
+	if (xstatus == XST_SUCCESS){
+		Pckt.PacketSize += transferredBytes;
+	}
+
+	xstatus = Parser_GetEof(status);
+	if (xstatus == XST_SUCCESS){
+		Pckt.PacketSize += transferredBytes;
+		CurrentRxSpeed += Pckt.PacketSize;
+	}
+}
+
+
+
+void TxCallBack(XAxiDma *AxiDmaPtr){
+	int ProcessedBDs 		= 0;
+	int Index 				= 0;
+	u32 Status				= 0;
+	u32 TransferredBytes	= 0;
+	u32 Complete			= 0;
+	u32 ControlRegister		= 0;
+	u32 BufferAddress 		= 0;
+	u32 StatusRegister		= 0;
+	XAxiDma_Bd*	PointerBD;
+	XAxiDma_Bd* CurrentBD;
+	XAxiDma_BdRing* TxRing 	= XAxiDma_GetTxRing(AxiDmaPtr);
+	XAxiDma_BdRingIntDisable(TxRing, XAXIDMA_IRQ_ALL_MASK);
+	ProcessedBDs = XAxiDma_BdRingFromHw(TxRing, XAXIDMA_ALL_BDS, &PointerBD);
+	CurrentBD = PointerBD;
+/*ANALYSIS*/
+	for (Index = 0; Index < ProcessedBDs; Index ++){
+		ControlRegister = XAxiDma_BdRead(CurrentBD, MM2S_CONTROLREGISTER_OFFSET);
+		StatusRegister = XAxiDma_BdRead(CurrentBD, MM2S_STATUSREGISTER_OFFSET);
+		BufferAddress = XAxiDma_BdRead(CurrentBD, MM2S_BUFFER_ADDRESS_OFFSET);
+//		xil_printf("0x%08x, \t 0x%08x\r\n", ControlRegister, StatusRegister);
+
+		TransferredBytes = Parser_ExtractTransferredBytes(StatusRegister);
+		Status = Parser_ExtractStatus(StatusRegister);
+		Status |= Parser_ExtractStatus(ControlRegister);
+		Parser_PostProcessing(Status, TransferredBytes, BufferAddress);
+		/*
+		 * In Control Register = TxSoF, TxEof, DescSize
+		 * In StatusRegister = Errors, TransferredData;
+		 *
+		 * */
+		CurrentBD = XAxiDma_BdRingNext(TxRing, CurrentBD);
+	}
+
+	int Difference = Parser_GetDifferenceRxTx(Pckt, TxPckt);
+#if PRINT_DIFFER
+	if (Difference != 0){
+		xil_printf("\r\nDifference Rx and Tx:\t %d\r\n", Difference);
+	}
+#endif
+	/*END ANALYSIS*/
+#if INFINITE
+	xstatus = XAxiDma_BdRingFree(TxRing, ProcessedBDs, PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailed to enqueue TxRing to HW processing\r\n");
+	}
+#endif
+
+	XAxiDma_BdRingIntEnable(TxRing, XAXIDMA_IRQ_ALL_MASK);
+}
+
+
+
+u32 Parser_PostProcessing(u32 status, u32 transferredBytes, u32 bufferAddress){
+	xstatus = Parser_isErrorDescriptor(status);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nError In descriptor\r\n");
+		return XST_FAILURE;
+	}
+
+	xstatus = Parser_GetComplete(status);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nUncompleted Descriptor\r\n");
+		return XST_FAILURE;
+	}
+
+	xstatus = Parser_GetSof(status);
+	if (xstatus == XST_SUCCESS){
+		TxPckt.StartAddress = bufferAddress;
+		TxPckt.PacketSize = transferredBytes;
+	}
+
+	xstatus = Parser_GetIof(status);
+	if (xstatus == XST_SUCCESS){
+		TxPckt.PacketSize += transferredBytes;
+	}
+
+	xstatus = Parser_GetEof(status);
+	if (xstatus == XST_SUCCESS){
+		TxPckt.PacketSize += transferredBytes;
+		CurrentTxSpeed += TxPckt.PacketSize;
+	}
+	return XST_SUCCESS;
+}
+
+
+/*
+ * Software Corruption must be record in HW checker. This functions allows
+ * check it
+ * */
+u32 Parser_DoCorruption(){
+	u32* Address = RX_BUFFER_BASE;
+	Address = Address + 10;
+	(*Address) = 1337;
+	return XST_SUCCESS;
+}
+
+
+
+/*
+ * Инициализация момента отправки MM2S, в параметрах мы передаем структуру
+ * которая содержит данные о том, сколько читать и откуда.
+ * В работе участвует DataCache, размер которого
+ * */
+u32 InitializationTransfer_MM2S(PacketStructure packet, XAxiDma* AxiDmaInstPtr){
+
+#if ENABLE_CORRUPTION
+	Parser_DoCorruption();
+#endif
+	XAxiDma_BdRing* TxRing = XAxiDma_GetTxRing(AxiDmaInstPtr);
+	XAxiDma_Bd *PointerBD;
+	XAxiDma_Bd *CurrentBD;
+
+	u32 incrementableBufferAddress = (u32*)packet.StartAddress;
+	u32 InvolvedBDs 				= GetInvolvedBDs(packet.PacketSize);
+	int Tail 						= (int)GetPacketTail(packet.PacketSize, InvolvedBDs);
+	u32	StatusRegister 				= 0;
+
+	int Index = 0;
+
+	xstatus = XAxiDma_BdRingAlloc(TxRing, InvolvedBDs, &PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("\r\nFailedToAllocateBDs\r\n");
+		return XST_FAILURE;
+	}
+
+	CurrentBD = PointerBD;
+	for (Index = 0; Index < InvolvedBDs; Index++){
+
+		StatusRegister = 0;
+
+		xstatus = XAxiDma_BdSetBufAddr(CurrentBD, incrementableBufferAddress);
+		if (xstatus != XST_SUCCESS){
+			xil_printf("Failed to Set BufferAddress\r\n");
+			return XST_FAILURE;
+		}
+
+		if (Tail == 0){
+
+			if (Index == 0){
+				StatusRegister |= XAXIDMA_BD_CTRL_TXSOF_MASK;
+			}
+
+			if (Index == InvolvedBDs-1){
+				StatusRegister |= XAXIDMA_BD_CTRL_TXEOF_MASK;
+			}
+			xstatus = XAxiDma_BdSetLength(CurrentBD, BYTES_PER_DESCRIPTOR, TxRing->MaxTransferLen);
+			if (xstatus != XST_SUCCESS){
+				xil_printf("Failed to Set Length\r\n");
+				return XST_FAILURE;
+			}
+		}
+
+		if (Tail != 0){
+
+			if (Index != InvolvedBDs-1){
+
+				if (Index == 0){
+					StatusRegister |= XAXIDMA_BD_CTRL_TXSOF_MASK;
+				}
+
+				xstatus = XAxiDma_BdSetLength(CurrentBD, BYTES_PER_DESCRIPTOR, TxRing->MaxTransferLen);
+				if (xstatus != XST_SUCCESS){
+					xil_printf("Failed to Set Length\r\n");
+					return XST_FAILURE;
+				}
+			}
+			if (Index == InvolvedBDs-1){
+				StatusRegister |= XAXIDMA_BD_CTRL_TXEOF_MASK;
+
+				xstatus = XAxiDma_BdSetLength(CurrentBD, Tail, TxRing->MaxTransferLen);
+				if (xstatus != XST_SUCCESS){
+					xil_printf("Failed to Set Length on the tail\r\n");
+					return XST_FAILURE;
+				}
+			}
+		}
+
+		XAxiDma_BdSetCtrl(CurrentBD, StatusRegister);
+
+		StatusRegister = 0;
+
+		incrementableBufferAddress += BYTES_PER_DESCRIPTOR;
+
+		CurrentBD = XAxiDma_BdRingNext(TxRing, CurrentBD);
+	}
+	xstatus = XAxiDma_BdRingToHw(TxRing, InvolvedBDs, PointerBD);
+	if (xstatus != XST_SUCCESS){
+		xil_printf("Failed To Enqueue to Hardware Processing\r\n");
+		return XST_FAILURE;
+	}
+	return XST_SUCCESS;
+}
+
+/**/
+u32 GetInvolvedBDs(u32 packetSize){
+	u32 bytesPerDescriptor = BYTES_PER_DESCRIPTOR;
+	u32 InvolvedBDs = packetSize/bytesPerDescriptor;
+//	xil_printf("PacketSize\t%d\r\n", packetSize);
+	u32 FullyUsed =	InvolvedBDs * bytesPerDescriptor;
+	if (packetSize > FullyUsed){
+		InvolvedBDs++;
+	}
+	return InvolvedBDs;
+}
+
+
+u32 GetPacketTail(u32 packetSize, u32 involvedBDs){
+	u32 bytesPerDescriptor = BYTES_PER_DESCRIPTOR;
+	return packetSize - ((involvedBDs-1) * bytesPerDescriptor);
+}

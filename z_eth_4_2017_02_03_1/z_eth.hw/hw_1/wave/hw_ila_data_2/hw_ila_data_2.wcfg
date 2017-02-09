@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Projects/z_eth_4_2017_02_03_1/z_eth.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="6321fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WREADY</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_WREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/s_axi_lite_awaddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_lite_awaddr[9:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BRESP" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_BRESP[1:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BVALID</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_BVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_BREADY</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_BREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/s_axi_lite_araddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axi_lite_araddr[9:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RREADY</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_RREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WVALID</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_WVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARVALID</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_ARVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_ARREADY</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_ARREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_RDATA[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWVALID</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_AWVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWREADY" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_AWREADY</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_AWREADY</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RRESP" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_RRESP[1:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_WDATA[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/probe15" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/probe15[3:0]</obj_property>
+      <obj_property name="ObjectShortName">probe15[3:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/processing_system7_0_axi_periph1_M00_AXI_RVALID</obj_property>
+      <obj_property name="ObjectShortName">processing_system7_0_axi_periph1_M00_AXI_RVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/probe17" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/probe17[2:0]</obj_property>
+      <obj_property name="ObjectShortName">probe17[2:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/probe18" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/probe18[2:0]</obj_property>
+      <obj_property name="ObjectShortName">probe18[2:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+</wave_config>

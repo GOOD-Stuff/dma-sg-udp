@@ -1,0 +1,43 @@
+12:45:31 **** Auto Build of configuration Debug for project lwip_dma ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/udp_lib.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/udp_lib.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../lwip_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/udp_lib.d" -MT"src/udp_lib.o" -o "src/udp_lib.o" "../src/udp_lib.c"
+In file included from ../src/udp_lib.h:7:0,
+                 from ../src/udp_lib.c:3:
+../../lwip_dma_bsp/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^
+../../lwip_dma_bsp/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^
+../src/udp_lib.c: In function 'init_udp':
+../src/udp_lib.c:21:2: warning: implicit declaration of function 'lwip_init' [-Wimplicit-function-declaration]
+  lwip_init();
+  ^
+../src/udp_lib.c:33:21: warning: passing argument 2 of 'udp_recv' from incompatible pointer type
+  udp_recv(ptel_pcb, recv_callback, NULL);
+                     ^
+In file included from ../src/udp_lib.h:9:0,
+                 from ../src/udp_lib.c:3:
+../../lwip_dma_bsp/ps7_cortexa9_0/include/lwip/udp.h:130:18: note: expected 'udp_recv_fn' but argument is of type 'err_t (*)(void *, struct udp_pcb *, struct pbuf *, struct ip_addr *, u16_t)'
+ void             udp_recv       (struct udp_pcb *pcb, udp_recv_fn recv,
+                  ^
+'Finished building: ../src/udp_lib.c'
+' '
+'Building target: lwip_dma.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../lwip_dma_bsp/ps7_cortexa9_0/lib -o "lwip_dma.elf"  ./src/helloworld.o ./src/platform.o ./src/platform_zynq.o ./src/udp_lib.o ./src/xaxicounter.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+'Finished building target: lwip_dma.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size lwip_dma.elf  |tee "lwip_dma.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  97176	   3980	 689444	 790600	  c1048	lwip_dma.elf
+'Finished building: lwip_dma.elf.size'
+' '
+
+12:45:32 Build Finished (took 634ms)
+

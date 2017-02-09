@@ -1,0 +1,417 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2016.1 (win64) Build 1538259 Fri Apr  8 15:45:27 MDT 2016
+| Date              : Wed Feb 08 15:02:40 2017
+| Host              : vldmr-PC running 64-bit Service Pack 1  (build 7601)
+| Command           : report_clock_utilization -file z_top_clock_utilization_routed.rpt
+| Design            : z_top
+| Device            : 7z010-clg400
+| Speed File        : -1  PRODUCTION 1.11 2014-09-11
+| Temperature Grade : C
+-----------------------------------------------------------------------------------------
+
+Clock Utilization Report
+
+Table of Contents
+-----------------
+1. Clock Primitive Utilization
+2. Global Clock Resources
+3. Global Clock Source Details
+4. Local Clock Details
+5. Clock Regions: Key Resource Utilization
+6. Clock Regions : Global Clock Summary
+7. Cell Type Counts per Global Clock: Region X0Y0
+8. Cell Type Counts per Global Clock: Region X1Y0
+9. Cell Type Counts per Global Clock: Region X0Y1
+10. Cell Type Counts per Global Clock: Region X1Y1
+11. Load Cell Placement Summary for Global Clock g0
+12. Load Cell Placement Summary for Global Clock g1
+13. Load Cell Placement Summary for Global Clock g2
+14. Load Cell Placement Summary for Global Clock g3
+15. Load Cell Placement Summary for Global Clock g4
+16. Load Cell Placement Summary for Global Clock g5
+17. Load Cell Placement Summary for Global Clock g6
+18. Load Cell Placement Summary for Global Clock g7
+19. Load Cell Placement Summary for Global Clock g8
+
+1. Clock Primitive Utilization
+------------------------------
+
++----------+------+-----------+-----+--------------+--------+
+| Type     | Used | Available | LOC | Clock Region | Pblock |
++----------+------+-----------+-----+--------------+--------+
+| BUFGCTRL |    7 |        32 |   0 |            0 |      0 |
+| BUFH     |    0 |        48 |   0 |            0 |      0 |
+| BUFIO    |    1 |         8 |   1 |            0 |      0 |
+| BUFMR    |    0 |         4 |   0 |            0 |      0 |
+| BUFR     |    1 |         8 |   0 |            0 |      0 |
+| MMCM     |    1 |         2 |   0 |            0 |      0 |
+| PLL      |    0 |         2 |   0 |            0 |      0 |
++----------+------+-----------+-----+--------------+--------+
+
+
+2. Global Clock Resources
+-------------------------
+
++-------+-------+-----------------+------------+---------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| GlbID | SrcId | Driver Type/Pin | Constraint | Site          | Clock Region | Root | Clock Delay Group | Clock Regions | Clock Loads | Non-Clock Loads | Clock Period | Clock                                                               | Driver Pin                                                                                                           | Net                                                                                                            |
++-------+-------+-----------------+------------+---------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |      |                   |             4 |           1 |            9137 |        8.000 | clk_fpga_0                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O                             | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0                                                 |
+| g1    | src1  | BUFG/O          | None       | BUFGCTRL_X0Y6 | n/a          | n/a  | n/a               |             1 |           0 |               1 |       60.000 | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/UPDATE | dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon_update/O                                                                        | dbg_hub/inst/UPDATE_temp                                                                                       |
+| g2    | src1  | BUFG/O          | None       | BUFGCTRL_X0Y5 | n/a          | n/a  | n/a               |             2 |           0 |             273 |       30.000 | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/DRCK   | dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon/O                                                                               | dbg_hub/inst/idrck                                                                                             |
+| g3    | src2  | BUFIO/O         | BUFIO_X0Y7 | BUFIO_X0Y7    | X1Y1         | n/a  | n/a               |             1 |           0 |               5 |        8.000 | RGMII_RX_CLK                                                        | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/bufio_rgmii_rx_clk/O | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/C              |
+| g4    | src2  | BUFR/O          | None       | BUFR_X0Y5     | X1Y1         | n/a  | n/a               |             1 |           0 |            1968 |        8.000 | RGMII_RX_CLK                                                        | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/bufr_rgmii_rx_clk/O  | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK            |
+| g5    | src3  | BUFGCTRL/O      | None       | BUFGCTRL_X0Y3 | n/a          | n/a  | n/a               |             1 |           0 |              37 |        8.000 | clkout1                                                             | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout2_buf/O       | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out |
+| g6    | src3  | BUFGCTRL/O      | None       | BUFGCTRL_X0Y2 | n/a          | n/a  | n/a               |             3 |           0 |             819 |        8.000 | clkout0                                                             | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout1_buf/O       | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk   |
+| g7    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y4 | n/a          | n/a  | n/a               |             1 |           0 |              15 |        5.000 | clk_fpga_1                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG/O                             | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1                                                 |
+| g8    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          | n/a  | n/a               |             4 |           0 |            8867 |       10.000 | clk_fpga_2                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_2.FCLK_CLK_2_BUFG/O                             | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2                                                 |
++-------+-------+-----------------+------------+---------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+---------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+* Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
+
+
+3. Global Clock Source Details
+------------------------------
+
++-------+--------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| SrcID | GlbIDs | Driver Type/Pin    | Constraint | Site            | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock                                                        | Driver Pin                                                                                                             | Net                                                                                                                  |
++-------+--------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+| src0  | g0     | PS7/FCLKCLK[0]     | PS7_X0Y0   | PS7_X0Y0        | X0Y1         |           1 |               0 |               8.000 | clk_fpga_0                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]                                                  | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]                                          |
+| src0  | g7     | PS7/FCLKCLK[1]     | PS7_X0Y0   | PS7_X0Y0        | X0Y1         |           1 |               0 |               5.000 | clk_fpga_1                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/PS7_i/FCLKCLK[1]                                                  | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK_unbuffered[1]                                          |
+| src0  | g8     | PS7/FCLKCLK[2]     | PS7_X0Y0   | PS7_X0Y0        | X0Y1         |           1 |               0 |              10.000 | clk_fpga_2                                                          | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/PS7_i/FCLKCLK[2]                                                  | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK_unbuffered[2]                                          |
+| src1  | g2     | BSCANE2/DRCK       | None       | BSCAN_X0Y0      | X0Y0         |           1 |               0 |              30.000 | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/DRCK   | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/DRCK                                                      | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/DRCK                                                                             |
+| src1  | g1     | BSCANE2/UPDATE     | None       | BSCAN_X0Y0      | X0Y0         |           1 |               0 |              60.000 | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/UPDATE | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/UPDATE                                                    | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/UPDATE                                                                           |
+| src2  | g3, g4 | IBUF/O             | IOB_X0Y78  | IOB_X0Y78       | X1Y1         |           2 |               0 |               8.000 | RGMII_RX_CLK                                                        | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/rgmii_rxc_ibuf_i/O     | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/rgmii_rxc_ibuf_i_n_0 |
+| src3  | g6     | MMCME2_ADV/CLKOUT0 | None       | MMCME2_ADV_X0Y0 | X1Y0         |           1 |               0 |               8.000 | clkout0                                                             | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/mmcm_adv_inst/CLKOUT0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout0             |
+| src3  | g5     | MMCME2_ADV/CLKOUT1 | None       | MMCME2_ADV_X0Y0 | X1Y0         |           1 |               0 |               8.000 | clkout1                                                             | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/mmcm_adv_inst/CLKOUT1 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout1             |
++-------+--------+--------------------+------------+-----------------+--------------+-------------+-----------------+---------------------+---------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
+
+
+4. Local Clock Details
+----------------------
+
++-------+-----------------+------------+----------+--------------+-------------+-----------------+--------------+-------+------------+-----+
+| LocId | Driver Type/Pin | Constraint | Site/BEL | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin | Net |
++-------+-----------------+------------+----------+--------------+-------------+-----------------+--------------+-------+------------+-----+
+
+
+5. Clock Regions: Key Resource Utilization
+------------------------------------------
+
++-------------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+|                   | Global Clock |     BUFRs    |    BUFMRs    |    BUFIOs    |     MMCM     |      PLL     |      GT      |      PCI     |    ILOGIC    |    OLOGIC    |      FF      |     LUTM     |    RAMB18    |    RAMB36    |    DSP48E2   |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+| X0Y0              |    2 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 5323 |  8800 | 2021 |  1600 |    0 |     0 |    0 |    10 |    0 |    20 |
+| X1Y0              |    3 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 | 5217 |  8800 | 1910 |  1400 |    0 |     0 |   18 |    20 |    0 |    20 |
+| X0Y1              |    4 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 | 5422 |  8800 | 2039 |  1600 |    0 |     0 |   12 |    10 |    0 |    20 |
+| X1Y1              |    9 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    5 |    50 |    6 |    50 | 5090 |  8800 | 1716 |  1400 |    0 |     0 |   18 |    20 |    0 |    20 |
++-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
+* Used Global Clocks includes only global clock resources based on load placement but does not consider global clock resources used to traverse a clock region. Therefore the actual total of Used Global Clocks may be higher.
+** RAMB36 site can be used as two RAMB18/FIFO18 sites.
+
+
+6. Clock Regions : Global Clock Summary
+---------------------------------------
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  4 |  9 |
+| Y0 |  2 |  3 |
++----+----+----+
+* Used Global Clocks includes only global clock resources based on load placement but does not consider global clock resources used to traverse a clock region. Therefore the actual total of Used Global Clocks may be higher.
+
+
+7. Cell Type Counts per Global Clock: Region X0Y0
+-------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                            |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |            2277 | 2277 |    853 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0 |
+| g8    | n/a   | BUFG/O          | None       |           0 |            3046 | 3046 |   1168 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2 |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------+
+
+
+8. Cell Type Counts per Global Clock: Region X1Y0
+-------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                          |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           1 |            4506 | 4498 |   1668 |   11 |   0 |  0 |    1 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0                                               |
+| g6    | n/a   | BUFGCTRL/O      | None       |           0 |              66 |   63 |     19 |    3 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk |
+| g8    | n/a   | BUFG/O          | None       |           0 |             659 |  656 |    223 |    4 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2                                               |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+
+
+9. Cell Type Counts per Global Clock: Region X0Y1
+-------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                          |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |            1807 | 1806 |    583 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0                                               |
+| g2    | n/a   | BUFG/O          | None       |           0 |               1 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/idrck                                                                                           |
+| g6    | n/a   | BUFGCTRL/O      | None       |           0 |             292 |  292 |     67 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk |
+| g8    | n/a   | BUFG/O          | None       |           0 |            3330 | 3323 |   1389 |   12 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2                                               |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+--------------------------------------------------------------------------------------------------------------+
+
+
+10. Cell Type Counts per Global Clock: Region X1Y1
+--------------------------------------------------
+
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------------+
+| GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF   | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                                                                                            |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------------+
+| g0    | n/a   | BUFG/O          | None       |           0 |             541 |  533 |    253 |    8 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0                                                 |
+| g1    | n/a   | BUFG/O          | None       |           0 |               1 |    1 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/UPDATE_temp                                                                                       |
+| g2    | n/a   | BUFG/O          | None       |           0 |             272 |  272 |     74 |    0 |   0 |  0 |    0 |   0 |       0 | dbg_hub/inst/idrck                                                                                             |
+| g3    | n/a   | BUFIO/O         | BUFIO_X0Y7 |           0 |               5 |    0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/C              |
+| g4    | n/a   | BUFR/O          | None       |           0 |            1968 | 1962 |    589 |    6 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK            |
+| g5    | n/a   | BUFGCTRL/O      | None       |           0 |              37 |   36 |     15 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out |
+| g6    | n/a   | BUFGCTRL/O      | None       |           0 |             461 |  454 |    123 |    2 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk   |
+| g7    | n/a   | BUFG/O          | None       |           0 |              15 |   14 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1                                                 |
+| g8    | n/a   | BUFG/O          | None       |           0 |            1820 | 1818 |    662 |    2 |   0 |  0 |    0 |   0 |       0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2                                                 |
++-------+-------+-----------------+------------+-------------+-----------------+------+--------+------+-----+----+------+-----+---------+----------------------------------------------------------------------------------------------------------------+
+
+
+11. Load Cell Placement Summary for Global Clock g0
+---------------------------------------------------
+
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                            |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| g0    | BUFG/O          | n/a               | clk_fpga_0 |       8.000 | {0.000 4.000} |          |        9131 |        0 |           1 |  0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0 |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+
+
++----+-------+-------+
+|    | X0    | X1    |
++----+-------+-------+
+| Y1 |  1807 |   541 |
+| Y0 |  2277 |  4507 |
++----+-------+-------+
+
+
+12. Load Cell Placement Summary for Global Clock g1
+---------------------------------------------------
+
++-------+-----------------+-------------------+---------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock                                                               | Period (ns) | Waveform (ns)  | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                      |
++-------+-----------------+-------------------+---------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------------+
+| g1    | BUFG/O          | n/a               | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/UPDATE |      60.000 | {0.000 30.000} |          |           1 |        0 |           0 |  0 | dbg_hub/inst/UPDATE_temp |
++-------+-----------------+-------------------+---------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------------+
+
+
++----+----+----+
+|    | X0 | X1 |
++----+----+----+
+| Y1 |  0 |  1 |
+| Y0 |  0 |  0 |
++----+----+----+
+
+
+13. Load Cell Placement Summary for Global Clock g2
+---------------------------------------------------
+
++-------+-----------------+-------------------+-------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock                                                             | Period (ns) | Waveform (ns)  | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                |
++-------+-----------------+-------------------+-------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------+
+| g2    | BUFG/O          | n/a               | dbg_hub/inst/N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/DRCK |      30.000 | {0.000 15.000} |          |         273 |        0 |           0 |  0 | dbg_hub/inst/idrck |
++-------+-----------------+-------------------+-------------------------------------------------------------------+-------------+----------------+----------+-------------+----------+-------------+----+--------------------+
+
+
++----+----+------+
+|    | X0 | X1   |
++----+----+------+
+| Y1 |  1 |  272 |
+| Y0 |  0 |    0 |
++----+----+------+
+
+
+14. Load Cell Placement Summary for Global Clock g3
+---------------------------------------------------
+
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+---------------------------------------------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                                                               |
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+---------------------------------------------------------------------------------------------------+
+| g3    | BUFIO/O         | X1Y1              | RGMII_RX_CLK |       8.000 | {0.000 4.000} |          |           5 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/C |
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+---------------------------------------------------------------------------------------------------+
+
+
++----+----+--------+
+|    | X0 | X1     |
++----+----+--------+
+| Y1 |  0 |  (D) 5 |
+| Y0 |  0 |      0 |
++----+----+--------+
+
+
+15. Load Cell Placement Summary for Global Clock g4
+---------------------------------------------------
+
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock        | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                                                                 |
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------------------------------------------------------------+
+| g4    | BUFR/O          | X1Y1              | RGMII_RX_CLK |       8.000 | {0.000 4.000} |          |        1968 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK |
++-------+-----------------+-------------------+--------------+-------------+---------------+----------+-------------+----------+-------------+----+-----------------------------------------------------------------------------------------------------+
+
+
++----+----+-----------+
+|    | X0 | X1        |
++----+----+-----------+
+| Y1 |  0 |  (D) 1968 |
+| Y0 |  0 |         0 |
++----+----+-----------+
+
+
+16. Load Cell Placement Summary for Global Clock g5
+---------------------------------------------------
+
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock   | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                                                                            |
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------------------------------------------------------+
+| g5    | BUFGCTRL/O      | n/a               | clkout1 |       8.000 | {2.000 6.000} |          |          37 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out |
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------------------------------------------------------+
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y1 |  0 |  37 |
+| Y0 |  0 |   0 |
++----+----+-----+
+
+
+17. Load Cell Placement Summary for Global Clock g6
+---------------------------------------------------
+
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+--------------------------------------------------------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock   | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                                                                          |
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+--------------------------------------------------------------------------------------------------------------+
+| g6    | BUFGCTRL/O      | n/a               | clkout0 |       8.000 | {0.000 4.000} |          |         819 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk |
++-------+-----------------+-------------------+---------+-------------+---------------+----------+-------------+----------+-------------+----+--------------------------------------------------------------------------------------------------------------+
+
+
++----+------+------+
+|    | X0   | X1   |
++----+------+------+
+| Y1 |  292 |  461 |
+| Y0 |    0 |   66 |
++----+------+------+
+
+
+18. Load Cell Placement Summary for Global Clock g7
+---------------------------------------------------
+
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                            |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| g7    | BUFG/O          | n/a               | clk_fpga_1 |       5.000 | {0.000 2.500} |          |          15 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1 |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+
+
++----+----+-----+
+|    | X0 | X1  |
++----+----+-----+
+| Y1 |  0 |  15 |
+| Y0 |  0 |   0 |
++----+----+-----+
+
+
+19. Load Cell Placement Summary for Global Clock g8
+---------------------------------------------------
+
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| GlbID | Driver Type/Pin | Driver Region (D) | Clock      | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net                                                            |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+| g8    | BUFG/O          | n/a               | clk_fpga_2 |      10.000 | {0.000 5.000} |          |        8855 |        0 |           0 |  0 | z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2 |
++-------+-----------------+-------------------+------------+-------------+---------------+----------+-------------+----------+-------------+----+----------------------------------------------------------------+
+
+
++----+-------+-------+
+|    | X0    | X1    |
++----+-------+-------+
+| Y1 |  3330 |  1820 |
+| Y0 |  3046 |   659 |
++----+-------+-------+
+
+
+
+# Location of BUFG Primitives 
+set_property LOC BUFGCTRL_X0Y1 [get_cells z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_2.FCLK_CLK_2_BUFG]
+set_property LOC BUFGCTRL_X0Y4 [get_cells z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG]
+set_property LOC BUFGCTRL_X0Y0 [get_cells z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG]
+set_property LOC BUFGCTRL_X0Y2 [get_cells z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout1_buf]
+set_property LOC BUFGCTRL_X0Y3 [get_cells z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout2_buf]
+set_property LOC BUFGCTRL_X0Y5 [get_cells dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon]
+set_property LOC BUFGCTRL_X0Y6 [get_cells dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon_update]
+
+# Location of BUFIO Primitives 
+set_property LOC BUFIO_X0Y7 [get_cells z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/bufio_rgmii_rx_clk]
+
+# Location of BUFR Primitives 
+set_property LOC BUFR_X0Y5 [get_cells z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/bufr_rgmii_rx_clk]
+
+# Location of IO Primitives which is load of clock spine
+
+# Location of clock ports
+set_property LOC IOB_X0Y78 [get_ports RGMII_RX_CLK]
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2" driven by instance "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_2.FCLK_CLK_2_BUFG" located at site "BUFGCTRL_X0Y1"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK2}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1" driven by instance "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_1.FCLK_CLK_1_BUFG" located at site "BUFGCTRL_X0Y4"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK1}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0" driven by instance "z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG" located at site "BUFGCTRL_X0Y0"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/mmcm_adv_inst} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/processing_system7_0/inst/FCLK_CLK0}] -add {CLOCKREGION_X0Y0:CLOCKREGION_X0Y0 CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk" driven by instance "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout1_buf" located at site "BUFGCTRL_X0Y2"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/tx_mac_aclk}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y0:CLOCKREGION_X1Y0 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out" driven by instance "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/clkout2_buf" located at site "BUFGCTRL_X0Y3"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_support_clocking_i/gtx_clk90_out}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK" driven by instance "z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/bufr_rgmii_rx_clk" located at site "BUFR_X0Y5"
+#startgroup
+create_pblock {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK}
+add_cells_to_pblock [get_pblocks  {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK"}]]]
+resize_pblock [get_pblocks {CLKAG_z_eth_wrapper_inst/z_eth_i/axi_ethernet_0/U0/eth_mac/U0/tri_mode_ethernet_mac_i/rgmii_interface/CLK}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "dbg_hub/inst/idrck" driven by instance "dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon" located at site "BUFGCTRL_X0Y5"
+#startgroup
+create_pblock {CLKAG_dbg_hub/inst/idrck}
+add_cells_to_pblock [get_pblocks  {CLKAG_dbg_hub/inst/idrck}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dbg_hub/inst/idrck"}]]]
+resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/idrck}] -add {CLOCKREGION_X0Y1:CLOCKREGION_X0Y1 CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup
+
+# Clock net "dbg_hub/inst/UPDATE_temp" driven by instance "dbg_hub/inst/N_EXT_BSCAN.u_bufg_icon_update" located at site "BUFGCTRL_X0Y6"
+#startgroup
+create_pblock {CLKAG_dbg_hub/inst/UPDATE_temp}
+add_cells_to_pblock [get_pblocks  {CLKAG_dbg_hub/inst/UPDATE_temp}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="dbg_hub/inst/UPDATE_temp"}]]]
+resize_pblock [get_pblocks {CLKAG_dbg_hub/inst/UPDATE_temp}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1}
+#endgroup

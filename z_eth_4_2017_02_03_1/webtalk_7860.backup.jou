@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:27 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Thu Jan 19 11:11:46 2017
+# Process ID: 7860
+# Current directory: d:/Projects/z_eth_2
+# Command line: wbtcv.exe -mode batch -source d:/projects/z_eth_2/z_eth.tmp/axis_counter_direct_v1_0_project/AXIS_Counter_Direct_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace
+# Log file: d:/Projects/z_eth_2/webtalk.log
+# Journal file: d:/Projects/z_eth_2\webtalk.jou
+#-----------------------------------------------------------
+source d:/projects/z_eth_2/z_eth.tmp/axis_counter_direct_v1_0_project/AXIS_Counter_Direct_v1_0_project.hw/webtalk/labtool_webtalk.tcl -notrace

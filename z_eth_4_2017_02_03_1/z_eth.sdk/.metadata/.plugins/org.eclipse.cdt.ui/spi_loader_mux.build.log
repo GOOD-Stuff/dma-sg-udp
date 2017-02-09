@@ -1,0 +1,36 @@
+15:11:22 **** Build of configuration Debug for project spi_loader_mux ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../spi_loader_mux_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../spi_loader_mux_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/spi_loader.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/spi_loader.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../spi_loader_mux_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/spi_loader.d" -MT"src/spi_loader.o" -o "src/spi_loader.o" "../src/spi_loader.c"
+../src/spi_loader.c: In function 'fpga_load':
+../src/spi_loader.c:277:6: warning: variable 'xstatus' set but not used [-Wunused-but-set-variable]
+  u32 xstatus = 0;
+      ^
+'Finished building: ../src/spi_loader.c'
+' '
+'Building target: spi_loader_mux.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../spi_loader_mux_bsp/ps7_cortexa9_0/lib -o "spi_loader_mux.elf"  ./src/helloworld.o ./src/platform.o ./src/spi_loader.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/spi_loader.o: In function `sd_read':
+C:\Projects\z_eth_4_2017_02_03_1\z_eth.sdk\spi_loader_mux\Debug/../src/spi_loader.c:179: undefined reference to `f_mount'
+C:\Projects\z_eth_4_2017_02_03_1\z_eth.sdk\spi_loader_mux\Debug/../src/spi_loader.c:191: undefined reference to `f_open'
+C:\Projects\z_eth_4_2017_02_03_1\z_eth.sdk\spi_loader_mux\Debug/../src/spi_loader.c:196: undefined reference to `f_lseek'
+C:\Projects\z_eth_4_2017_02_03_1\z_eth.sdk\spi_loader_mux\Debug/../src/spi_loader.c:201: undefined reference to `f_read'
+collect2.exe: error: ld returned 1 exit status
+make: *** [spi_loader_mux.elf] Error 1
+
+15:11:23 Build Finished (took 1s.77ms)
+

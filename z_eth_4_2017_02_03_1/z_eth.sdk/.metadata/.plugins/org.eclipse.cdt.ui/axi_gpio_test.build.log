@@ -1,0 +1,8 @@
+17:05:43 **** Incremental Build of configuration Debug for project axi_gpio_test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Цель `main-build' не требует выполнения команд.
+
+17:05:43 Build Finished (took 131ms)
+

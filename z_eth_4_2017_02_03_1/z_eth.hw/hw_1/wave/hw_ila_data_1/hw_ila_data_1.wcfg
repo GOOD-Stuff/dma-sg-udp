@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Projects/z_eth_4_2017_02_03_1/z_eth.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4091940fs"></ZoomStartTime>
+      <ZoomEndTime time="4098741fs"></ZoomEndTime>
+      <Cursor1Time time="4095000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="4" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA" type="array">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TDATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Counterv5_0_AXIS_TDATA[31:0]</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TLAST" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TLAST</obj_property>
+      <obj_property name="ObjectShortName">Counterv5_0_AXIS_TLAST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TVALID" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/Counterv5_0_AXIS_TVALID</obj_property>
+      <obj_property name="ObjectShortName">Counterv5_0_AXIS_TVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="z_eth_wrapper_inst/z_eth_i/axi_dma_0_s_axis_s2mm_tready" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">z_eth_wrapper_inst/z_eth_i/axi_dma_0_s_axis_s2mm_tready</obj_property>
+      <obj_property name="ObjectShortName">axi_dma_0_s_axis_s2mm_tready</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+   </wvobject>
+</wave_config>

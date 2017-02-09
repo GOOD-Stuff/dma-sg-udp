@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="z_top_hw_platform_1" key="programflash.hwplatform"/>
+	<item value="Local" key="z_top_hw_platform_1-target"/>
+	<item value="false" key="z_top_hw_platform_1-verifyFlash"/>
+	<item value="" key="z_top_hw_platform_1-offSet"/>
+	<item value="qspi_single" key="z_top_hw_platform_1-flashType"/>
+	<item value="false" key="z_top_hw_platform_1-blankCheck"/>
+	<item value="Auto Detect" key="z_top_hw_platform_1-device"/>
+	<item value="" key="z_top_hw_platform_1-fsblFile"/>
+	<item value="C:\Users\vldmr\Desktop\boots\170203\ILA\boot.bin" key="z_top_hw_platform_1-imgFile"/>
+</section>

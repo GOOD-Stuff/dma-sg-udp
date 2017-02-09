@@ -1,0 +1,133 @@
+10:15:21 **** Build of configuration Debug for project speedtest_dma ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/drivers/xaxichecker.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/drivers/xaxichecker.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../speedtest_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/drivers/xaxichecker.d" -MT"src/drivers/xaxichecker.o" -o "src/drivers/xaxichecker.o" "../src/drivers/xaxichecker.c"
+'Finished building: ../src/drivers/xaxichecker.c'
+' '
+'Building file: ../src/app.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/app.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../speedtest_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/app.d" -MT"src/app.o" -o "src/app.o" "../src/app.c"
+../src/app.c: In function 'main':
+../src/app.c:21:9: warning: unused variable 'SavedValue' [-Wunused-variable]
+     int SavedValue = 0;
+         ^
+'Finished building: ../src/app.c'
+' '
+'Building file: ../src/app_core.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/app_core.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../speedtest_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/app_core.d" -MT"src/app_core.o" -o "src/app_core.o" "../src/app_core.c"
+../src/app_core.c: In function 'Parser_CheckingData':
+../src/app_core.c:138:28: warning: passing argument 1 of 'Xil_DCacheInvalidateRange' makes integer from pointer without a cast
+  Xil_DCacheInvalidateRange(Packet, pkt.PacketSize/4-1);
+                            ^
+In file included from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:119:0,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:86,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma.h:471,
+                 from ../src/app_core.h:6,
+                 from ../src/app_core.c:1:
+../../speedtest_dma_bsp/ps7_cortexa9_0/include/xil_cache.h:98:6: note: expected 'INTPTR' but argument is of type 'u32 *'
+ void Xil_DCacheInvalidateRange(INTPTR adr, u32 len);
+      ^
+../src/app_core.c: In function 'Parser_CheckingBoundaryData':
+../src/app_core.c:160:28: warning: passing argument 1 of 'Xil_DCacheInvalidateRange' makes integer from pointer without a cast
+  Xil_DCacheInvalidateRange(Packet, LastIndex);
+                            ^
+In file included from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:119:0,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:86,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma.h:471,
+                 from ../src/app_core.h:6,
+                 from ../src/app_core.c:1:
+../../speedtest_dma_bsp/ps7_cortexa9_0/include/xil_cache.h:98:6: note: expected 'INTPTR' but argument is of type 'u32 *'
+ void Xil_DCacheInvalidateRange(INTPTR adr, u32 len);
+      ^
+../src/app_core.c: In function 'DMA_RxInitialization':
+../src/app_core.c:312:13: warning: assignment makes pointer from integer without a cast
+   CurrentBD = XAxiDma_BdRingNext(RxRing, CurrentBD);
+             ^
+../src/app_core.c: In function 'RxCallBack':
+../src/app_core.c:655:13: warning: assignment makes pointer from integer without a cast
+   CurrentBD = XAxiDma_BdRingNext(RxRing, CurrentBD);
+             ^
+../src/app_core.c: In function 'TxCallBack':
+../src/app_core.c:755:13: warning: assignment makes pointer from integer without a cast
+   CurrentBD = XAxiDma_BdRingNext(TxRing, CurrentBD);
+             ^
+../src/app_core.c:758:6: warning: unused variable 'Difference' [-Wunused-variable]
+  int Difference = Parser_GetDifferenceRxTx(Pckt, TxPckt);
+      ^
+../src/app_core.c:729:6: warning: unused variable 'Complete' [-Wunused-variable]
+  u32 Complete   = 0;
+      ^
+In file included from ../src/app_core.c:1:0:
+../src/app_core.c: In function 'Parser_DoCorruption':
+../src/app_core.h:59:27: warning: initialization makes pointer from integer without a cast
+ #define RX_BUFFER_BASE    (BASEADDR + 0x01400000) //Base Address for RxBuffer  <16 Mb>
+                           ^
+../src/app_core.c:815:17: note: in expansion of macro 'RX_BUFFER_BASE'
+  u32* Address = RX_BUFFER_BASE;
+                 ^
+../src/app_core.c: In function 'InitializationTransfer_MM2S':
+../src/app_core.c:837:35: warning: initialization makes integer from pointer without a cast
+  u32 incrementableBufferAddress = (u32*)packet.StartAddress;
+                                   ^
+../src/app_core.c:908:13: warning: assignment makes pointer from integer without a cast
+   CurrentBD = XAxiDma_BdRingNext(TxRing, CurrentBD);
+             ^
+../src/app_core.c: In function 'DMA_Initialization':
+../src/app_core.c:214:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../src/app_core.c: In function 'TIMER_Start':
+../src/app_core.c:486:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:86:0,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma.h:471,
+                 from ../src/app_core.h:6,
+                 from ../src/app_core.c:1:
+../src/app_core.c: In function 'DMA_RxInitialization':
+../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:207:20: warning: 'TemplateBD' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   memset((void *)(((UINTPTR)(BdPtr)) + XAXIDMA_BD_START_CLEAR), 0, \
+                    ^
+../src/app_core.c:261:14: note: 'TemplateBD' was declared here
+  XAxiDma_Bd* TemplateBD;
+              ^
+In file included from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:86:0,
+                 from ../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma.h:471,
+                 from ../src/app_core.h:6,
+                 from ../src/app_core.c:1:
+../src/app_core.c: In function 'DMA_TxInitialization':
+../../speedtest_dma_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:207:20: warning: 'TemplateBD' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   memset((void *)(((UINTPTR)(BdPtr)) + XAXIDMA_BD_START_CLEAR), 0, \
+                    ^
+../src/app_core.c:339:16: note: 'TemplateBD' was declared here
+  XAxiDma_Bd*   TemplateBD;   //Check this - Maybe not pointer???
+                ^
+../src/app_core.c: In function 'DMA_Initialization':
+../src/app_core.c:189:12: warning: 'ConfigurationDMA' is used uninitialized in this function [-Wuninitialized]
+  xstatus = DMA_Configure(DmaInstPtr, ConfigurationDMA);
+            ^
+'Finished building: ../src/app_core.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../speedtest_dma_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: speedtest_dma.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../speedtest_dma_bsp/ps7_cortexa9_0/lib -o "speedtest_dma.elf"  ./src/drivers/xaxichecker.o  ./src/app.o ./src/app_core.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: speedtest_dma.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size speedtest_dma.elf  |tee "speedtest_dma.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  57900	   3912	  22724	  84536	  14a38	speedtest_dma.elf
+'Finished building: speedtest_dma.elf.size'
+' '
+
+10:15:22 Build Finished (took 1s.285ms)
+
