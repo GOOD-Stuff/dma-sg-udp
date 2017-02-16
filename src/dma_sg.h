@@ -13,7 +13,6 @@
 #include <fcntl.h>
 #include <netinet/in.h>
 #include <sys/mman.h>
-//#include <sys/time.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -21,7 +20,6 @@
 #include <sys/socket.h>
 #include <time.h>
 #include <unistd.h>
-
 
 // MM2S CONTROL
 #define MM2S_CONTROL_REGISTER       0x00    // MM2S_DMACR
@@ -32,7 +30,7 @@
 #define MM2S_TAILDESC_MSB           0x14    // unused with 32bit addresses
 
 #define SG_CTL                      0x2C    // CACHE CONTROL
-#define UDP_BUFSIZE				   8192
+#define UDP_BUFSIZE				    8192	// Size of UDP packet
 
 // S2MM CONTROL
 #define S2MM_CONTROL_REGISTER       0x30    // S2MM_DMACR
@@ -51,10 +49,10 @@
 // ADDRESSES
 #define	AXI_DMA_BASEADDR            0x80400000	//AXI DMA Register Address Map
 #define	DESCRIPTOR_REGISTERS_SIZE   0xFFFF
-#define	SG_DMA_DESCRIPTORS_WIDTH    0x1FFFF //0xFFFF
+#define	SG_DMA_DESCRIPTORS_WIDTH    0x1FFFF
 #define	MEMBLOCK_WIDTH              0x1FFFFFF 	//?size? of mem used by s2mm and mm2s (32 MB)
-#define	BUFFER_BLOCK_WIDTH          0x4000  //0x7D0000	//size of memory block per descriptor in bytes (16 KB)
-#define DEST_MEM_BLOCK				0x6400000 // (100 MB)
+#define	BUFFER_BLOCK_WIDTH          0x4000      //size of memory block per descriptor in bytes (16 KB)
+#define DEST_MEM_BLOCK				0x6400000   // (100 MB)
 
 #define	HP0_DMA_BUFFER_MEM_ADDRESS         0x10000000
 #define	HP0_MM2S_DMA_BASE_MEM_ADDRESS      (HP0_DMA_BUFFER_MEM_ADDRESS)
@@ -64,7 +62,6 @@
 #define	HP0_MM2S_SOURCE_MEM_ADDRESS        (HP0_MM2S_DMA_BASE_MEM_ADDRESS + SG_DMA_DESCRIPTORS_WIDTH + 1)
 #define	HP0_S2MM_TARGET_MEM_ADDRESS        (HP0_S2MM_DMA_BASE_MEM_ADDRESS + SG_DMA_DESCRIPTORS_WIDTH + 1)
 
-//int  dma_alloc_mem(int fd, unsigned int axi_dma, unsigned int s2mm_descriptor_register_mmap, unsigned int dest_mem);
 void dma_reset(unsigned int *dma_vrt_address);
 void dma_descr_set(unsigned int *s2mm_descr_vrt_address, int num_descr);
 void dma_descr_scan(unsigned int *s2mm_descr_vrt_address, int num_descr);

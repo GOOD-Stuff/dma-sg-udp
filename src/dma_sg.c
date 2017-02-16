@@ -6,7 +6,7 @@
  */
 #include "dma_sg.h"
 
-static int dma_set(unsigned int *address, off_t offset, unsigned int value);
+static void dma_set(unsigned int *address, off_t offset, unsigned int value);
 static int dma_get(unsigned int *address, off_t offset);
 
 static struct sockaddr_in forward_ip;
@@ -49,16 +49,7 @@ int main(void){
 		exit(-1);
 	}
 
-	/*
-	unsigned int *axi_dma_vrt = NULL;
-	unsigned int* s2mm_descriptor_register_mmap = NULL;
-	unsigned int* dest_mem_map = NULL;
-	int status = dma_alloc_mem(fd, &axi_dma_vrt, &s2mm_descriptor_register_mmap, &dest_mem_map);
-	if( status != 0 ){
-		return -1;
-	}
-
-*/
+	// Mapped memory from phy to virt for work with DMA without Linux drivers
 	unsigned int *axi_dma_vrt = mmap(NULL, DESCRIPTOR_REGISTERS_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, AXI_DMA_BASEADDR);
 	if( axi_dma_vrt == MAP_FAILED ){
 		fprintf(stderr, "<E>: Couldn't mapped memory for AXI DMA: %s\r\n", strerror(errno));
@@ -67,6 +58,7 @@ int main(void){
 		return -1;
 	}
 
+	// mapped memory for S2MM descriptors
 	unsigned int *s2mm_descriptor_register_mmap = mmap(NULL, DESCRIPTOR_REGISTERS_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, HP0_S2MM_DMA_DESCRIPTORS_ADDRESS);
 	if( s2mm_descriptor_register_mmap == MAP_FAILED ){
 		fprintf(stderr, "<E>: Couldn't mapped memory for AXI DMA: %s\r\n", strerror(errno));
@@ -82,22 +74,11 @@ int main(void){
 		close(fd);
 		return -1;
 	}
-	memset(s2mm_descriptor_register_mmap, 0, DESCRIPTOR_REGISTERS_SIZE);
-	/*
-	// fill s2mm-register memory with zeros
 
-	for (i = 0; i < DESCRIPTOR_REGISTERS_SIZE; i++) {
-		char *p = (char *) s2mm_descriptor_register_mmap;
-		p[i] = 0x00000000;
-	}
-*/
+	// fill s2mm-register memory with zeros
+	memset(s2mm_descriptor_register_mmap, 0, DESCRIPTOR_REGISTERS_SIZE);
 	memset(dest_mem_map, 0, DEST_MEM_BLOCK);
-	/*
-	for (i = 0; i < (BUFFER_BLOCK_WIDTH / 4) * num_descr; i++) {
-		unsigned int *p = dest_mem_map;
-		p[i] = 0xffffffff;
-	}
-*/
+
 	dma_reset(axi_dma_vrt);		// Reset AXI DMA
 
 	uint32_t s2mm_current_descriptor_address = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS;
@@ -144,12 +125,6 @@ int main(void){
 		dma_descr_scan(s2mm_descriptor_register_mmap, num_descr);
 	}
 
-	//int bufsize = 0;
-	//int size = sizeof(bufsize);
-	//getsockopt(socket_desc, SOL_SOCKET, SO_SNDBUF, &bufsize, &size);
-	//printf("bufsize %d %d\r\n", bufsize, size);
-
-
 	FILE *log_fd = fopen("/media/card/log", "w");
 	if( log_fd == NULL ){
 		fprintf(stderr, "<E>: Couldn't open /media/card/log: %s\r\n", strerror(errno));
@@ -157,9 +132,7 @@ int main(void){
 		exit(-1);
 	}
 	for( i = 0; i < ( BUFFER_BLOCK_WIDTH / 4 ) * num_descr; i++ ){
-		//if( dest_mem_map[i] != 0 ){
 			fwrite(&dest_mem_map[i], sizeof(unsigned int), 1, log_fd);
-		//}
 	}
 
 	printf("We try to send %d \r\n", BUFFER_BLOCK_WIDTH * num_descr);
@@ -174,29 +147,20 @@ int main(void){
 	return 0;
 }
 
-
+/**
+ * @brief  Transfer data via UDP
+ *
+ * @param  sock   - handler of socket file;
+ * 		   buffer - buffer of data;
+ *		   buflen - size of buffer;
+ *
+ * @return result_lenght - common size of send data;
+ * @note   This function can send big data;
+ */
 int udp_send(int sock, const void *buffer, size_t buflen){
-/*
-	#define MIN(a,b) (((a)<(b))?(a):(b))
-	size_t sendlen = MIN(buflen, 8192);
-	size_t remlen  = buflen;
-	const void *cur_pos = buffer;
-
-	while (remlen > 0){
-		ssize_t len = sendto(sock, cur_pos, sendlen, 0, ( struct sockaddr *) &forward_ip, peer_addr_len );
-		if (len == -1)
-			return -1;
-
-		cur_pos += len;
-		remlen -= len;
-		sendlen = MIN(remlen, 8192);
-	}
-
-	return buflen;
-	*/
 	int count = 0;
 	int lost = 0;
-	int status = 0;
+	int result_lenght = 0;
 
 	// We check our size of buffer (bufsiz) of spidev, and send by packets of determined length
 	if( buflen > UDP_BUFSIZE ){
@@ -212,18 +176,35 @@ int udp_send(int sock, const void *buffer, size_t buflen){
 	for( i = 0; i < count; i++ ){
 		if( lost && ( ( ( count - i ) == 1 ) ) ){
 			len = sendto(sock, buffer + i * UDP_BUFSIZE, buflen, 0, ( struct sockaddr *) &forward_ip, peer_addr_len );
-			if( len == -1 )
-				return -1;
+			if( len == -1 ){
+				result_lenght = -1;
+				return result_lenght;
+			}
+			result_lenght += len;
 		}
 		else{
 			len = sendto(sock, buffer + i * UDP_BUFSIZE, UDP_BUFSIZE + 8, 0, ( struct sockaddr *) &forward_ip, peer_addr_len );
-			if( len == -1 )
-				return -1;
+			if( len == -1 ){
+				result_lenght = -1;
+				return result_lenght;
+			}
+			result_lenght += len;
 		}
 	}
-	return buflen;
+
+	return result_lenght;
 }
 
+/**
+ * @brief  Settings s2mm descriptors;
+ *
+ * @param  s2mm_descr_vrt_address - pointer to s2mm descriptors;
+ * 		   num_descr - number of descriptors;
+ *
+ * @return none
+ * @note   This function set NXTDESC, Buffer address and size for Buffer;
+ * 		   Offset between descriptors is 0x40
+ */
 void dma_descr_set(unsigned int *s2mm_descr_vrt_address, int num_descr){
 	off_t offset_nxtdesc;
 	off_t offset_buff_addr;
@@ -249,38 +230,16 @@ void dma_descr_set(unsigned int *s2mm_descr_vrt_address, int num_descr){
 
 
 	} // end for
-
-/*
-	s2mm_descr_vrt_address[0x0 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS + 0x40; 	  // set next descriptor address
-	s2mm_descr_vrt_address[0x8 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x0; 	      // set target buffer address
-	s2mm_descr_vrt_address[0x18 >> 2] = 0x87D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0x40 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS + 0x80;   // set next descriptor address
-	s2mm_descr_vrt_address[0x48 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x7D0000; 	  // set target buffer address
-	s2mm_descr_vrt_address[0x58 >> 2] = 0x7D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0x80 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS	+ 0xC0;	  // set next descriptor address
-	s2mm_descr_vrt_address[0x88 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0xFA0000; 	  // set target buffer address
-	s2mm_descr_vrt_address[0x98 >> 2] = 0x7D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0xC0 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS + 0x100;  // set next descriptor address
-	s2mm_descr_vrt_address[0xC8 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x1770000;   // set target buffer address
-	s2mm_descr_vrt_address[0xD8 >> 2] = 0x7D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0x100 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS + 0x140; // set next descriptor address
-	s2mm_descr_vrt_address[0x108 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x1F40000;  // set target buffer address
-	s2mm_descr_vrt_address[0x118 >> 2] = 0x7D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0x140 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS + 0x180; // set next descriptor address
-	s2mm_descr_vrt_address[0x148 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x2710000;  // set target buffer address
-	s2mm_descr_vrt_address[0x158 >> 2] = 0x7D0000; 								  // set mm2s/s2mm buffer length to control register
-
-	s2mm_descr_vrt_address[0x180 >> 2] = HP0_S2MM_DMA_DESCRIPTORS_ADDRESS; 		  // set next descriptor address (unused?)
-	s2mm_descr_vrt_address[0x188 >> 2] = HP0_S2MM_TARGET_MEM_ADDRESS + 0x2EE0000;  // set target buffer address
-	s2mm_descr_vrt_address[0x198 >> 2] = 0x47D0000; 								  // set mm2s/s2mbm buffer length to control register
-*/
 }
 
+/**
+ * @brief  Read descriptor status;
+ *
+ * @param  s2mm_descr_vrt_address - pointer to s2mm descriptors;
+ * 		   num_descr - number of descriptors;
+ *
+ * @return none;
+ */
 void dma_descr_scan(unsigned int *s2mm_descr_vrt_address, int num_descr){
 	unsigned int s2mm_descr_st = 0;
 	off_t offset_status;
@@ -292,19 +251,44 @@ void dma_descr_scan(unsigned int *s2mm_descr_vrt_address, int num_descr){
 					"\tCmplt: %x;\r\n"
 					"\tRXSOF: %x;\r\n"
 					"\tRXEOF: %x;\r\n"
-					"\tBFLEN: %d bytes;\r\n", i, s2mm_descr_st, s2mm_descr_st & 0x80000000, s2mm_descr_st & 0x8000000, s2mm_descr_st & 0x4000000, s2mm_descr_st & 0x7FFFFF );
+					"\tBFLEN: %d bytes;\r\n", i, s2mm_descr_st, s2mm_descr_st & 0x80000000,
+					s2mm_descr_st & 0x8000000, s2mm_descr_st & 0x4000000, s2mm_descr_st & 0x7FFFFF );
 	}
 }
 
+/**
+ * @brief  Reset S2MM register;
+ *
+ * @param  dma_vrt_address - pointer to AXI DMA controller;
+ *
+ * @return none;
+ */
 void dma_reset(unsigned int *dma_vrt_address){
 	dma_set(dma_vrt_address, S2MM_CONTROL_REGISTER, 0x04);
 	dma_set(dma_vrt_address, S2MM_CONTROL_REGISTER, 0x00);
 }
 
-static int dma_set(unsigned int *address, off_t offset, unsigned int value){
-	return address[offset >> 2] = value;
+/**
+ * @brief  Write into some AXI address;
+ *
+ * @param  address - pointer to AXI DMA register or descriptor;
+ * 		   offset  - address space offset;
+ * 		   value   - value for writing;
+ *
+ * @return none;
+ */
+static void dma_set(unsigned int *address, off_t offset, unsigned int value){
+	address[offset >> 2] = value;
 }
 
+/**
+ * @brief  Read from some AXI address;
+ *
+ * @param  address - pointer to AXI DMA register or descriptor;
+ * 		   offset  - address space offset;
+ *
+ * @return Value which was read from address;
+ */
 static int dma_get(unsigned int *address, off_t offset){
 	return address[offset >> 2];
 }
